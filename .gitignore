@@ -4,3 +4,4 @@ node_modules/
 __pycache__/
 apps-script-backup/
 apps-script/.clasp.json
+.impeccable/
