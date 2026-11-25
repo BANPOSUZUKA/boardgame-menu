@@ -635,9 +635,14 @@
  },
  "지소기": {
   "name": "지소기",
-  "status": "실패",
-  "reason": "sheet: HTTP Error 403: Forbidden",
-  "checked": "2026-11-25 17:16"
+  "file": "7029854ba25a.webp",
+  "source": "https://www.boardgamesindia.com/image/cache/wp/gj/product/kickstarter/jisogi-anime-studio-tycoon-3000x3000.webp",
+  "origin": "sheet",
+  "size": [
+   480,
+   480
+  ],
+  "saved": "2026-11-25 17:23"
  },
  "카르디아": {
   "name": "카르디아",
@@ -769,8 +774,8 @@
  "포레스트셔플(확.포)": {
   "name": "포레스트 셔플 (확.포)",
   "status": "실패",
-  "reason": "sheet: cannot identify image file <_io.BytesIO object at 0x000002E63F558590>",
-  "checked": "2026-11-25 17:16"
+  "reason": "sheet: cannot identify image file <_io.BytesIO object at 0x79ed4a679f30>",
+  "checked": "2026-11-25 17:23"
  },
  "포레스트셔플다트무어": {
   "name": "포레스트 셔플 다트무어",
