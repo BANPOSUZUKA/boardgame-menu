@@ -105,7 +105,7 @@ dialog::backdrop{background:#19291f85}
 .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.links a{font-size:12px;text-decoration:none;background:var(--pale);padding:8px 10px;border-radius:8px}
 @media(max-width:1080px){.layout{grid-template-columns:270px minmax(0,1fr);gap:18px}.shell{padding-left:20px;padding-right:20px}}
 @media(max-width:760px){
-.shell{padding-left:16px;padding-right:16px}.hero .shell{padding-top:16px;padding-bottom:20px}.hero h1{margin:16px 0 4px;font-size:30px}.hero p{font-size:13px}.collection strong{font-size:32px}
+.shell{padding-left:16px;padding-right:16px}.brand{letter-spacing:.1em;white-space:nowrap}.sync-time{display:none}.hero .shell{padding-top:16px;padding-bottom:20px}.hero h1{margin:16px 0 4px;font-size:30px}.hero p{font-size:13px}.collection strong{font-size:32px}
 .layout{display:block}.filter-panel{position:static;display:none;margin-bottom:14px;padding:16px;max-height:none}.filter-panel.open{display:block}
 .main{padding-top:14px}
 .mobile-filter{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;padding:13px 14px;background:#fff;border:1px solid var(--line);border-radius:11px;width:100%;font-size:14px;font-weight:750}
@@ -120,7 +120,7 @@ dialog::backdrop{background:#19291f85}
 </head>
 <body>
 <header class="hero"><div class="shell">
- <div class="topline"><div class="brand"><span class="logo" data-icon="dice"></span>HOME GAME LIBRARY</div><div class="sync" aria-live="polite"><span class="sync-dot" id="syncDot"></span><span id="syncText">불러오는 중</span></div></div>
+ <div class="topline"><div class="brand"><span class="logo" data-icon="dice"></span>HOME GAME LIBRARY</div><div class="sync" aria-live="polite"><span class="sync-dot" id="syncDot"></span><span id="syncText">불러오는 중</span><span id="syncTime" class="sync-time"></span></div></div>
  <div class="hero-foot"><div><h1>우리집 보드게임</h1><p>오늘은 어떤 게임을 플레이할까요?</p></div><div class="collection"><strong id="total">—</strong><span>GAMES</span></div></div>
 </div></header>
 <main class="shell main">
@@ -227,7 +227,7 @@ function draw(){if(!filtered.length)return;const pool=chosen&&filtered.length>1?
 function renderChosen(){const g=chosen;$('drawName').textContent=g.name;$('drawCover').innerHTML=coverHtml(g,true);$('drawCover').onclick=()=>openGame(g);
  const parts=[levelLabel(g),playersText(g),g.recPlayers?`BGG 추천 ${g.recPlayers}인`:'',g.bestPlayers?`최적 ${g.bestPlayers}인`:'',timeText(g),g.type];$('drawMeta').innerHTML=parts.filter(Boolean).map(p=>`<span>${esc(p)}</span>`).join('')}
 function openGame(g){const meter=n=>`<div class="meter">${Array.from({length:5},(_,i)=>`<i class="${i<+n?'on':''}"></i>`).join('')}</div>`;
- const links=[...g.links];if(g.bggId&&!links.some(l=>l.includes('boardgamegeek.com/boardgame/'+g.bggId)))links.unshift(`https://boardgamegeek.com/boardgame/${g.bggId}`);
+ const bggOf=u=>(u.match(/boardgamegeek\.com\/boardgame\/(\d+)/)||[])[1];const links=[];for(const u of [g.bggId?`https://boardgamegeek.com/boardgame/${g.bggId}`:'',...g.links])if(u&&!links.some(l=>l===u||(bggOf(u)&&bggOf(l)===bggOf(u))))links.push(u);
  const label=u=>/boardgamegeek/.test(u)?'BGG':/tumblbug/.test(u)?'텀블벅':'참고 자료';
  $('detail').innerHTML=`<div class="d-wrap"><div class="d-cover">${coverHtml(g,true)}</div><div><div class="d-top"><div>${tagHtml(g,'')}<h2>${esc(g.name)}</h2>${g.english?`<div class="d-en">${esc(g.english)}</div>`:''}</div><button type="button" class="close" aria-label="닫기">×</button></div>
  <div class="d-stats"><div class="d-stat"><small>플레이 인원</small>${esc(playersText(g))}</div><div class="d-stat"><small>예상 시간</small>${esc(timeText(g))}</div><div class="d-stat"><small>BGG 추천 인원</small>${esc(g.recPlayers?g.recPlayers+'인':'—')}</div><div class="d-stat"><small>BGG 최적 인원</small>${esc(g.bestPlayers?g.bestPlayers+'인':'—')}</div><div class="d-stat"><small>BGG 웨이트</small>${esc(g.weight||'—')}</div><div class="d-stat"><small>체감 난이도</small>${esc(levelLabel(g))}</div></div>
@@ -262,7 +262,7 @@ async function sync(force){
  if(busy||(!force&&document.hidden))return;busy=true;
  try{const r=await fetch(API,{cache:'no-store'});if(!r.ok)throw new Error(r.status);const data=await r.json();if(!data.games)throw new Error('no games');
   setData(data);lastOk=Date.now();$('notice').hidden=true;
-  status('실시간 연동 · '+new Date().toLocaleTimeString('ko-KR',{hour:'2-digit',minute:'2-digit',second:'2-digit'}),'live');
+  status('실시간 연동','live');$('syncTime').textContent='· '+new Date().toLocaleTimeString('ko-KR',{hour:'2-digit',minute:'2-digit',second:'2-digit'});
   try{localStorage.setItem('bg-last',JSON.stringify(data))}catch(e){}
  }catch(e){status(hasData?'연결 재시도 중':'연결 실패','error');if(!hasData){$('notice').hidden=false;$('notice').textContent='게임 목록을 불러오지 못했어요. 잠시 후 자동으로 다시 시도해요.'}}
  finally{busy=false}
