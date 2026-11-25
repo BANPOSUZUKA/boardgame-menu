@@ -11,7 +11,7 @@
 import hashlib, io, json, os, sys, time, urllib.parse, urllib.request
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone, timedelta
-from PIL import Image
+from PIL import Image, ImageChops
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 COVERS = os.path.join(ROOT, 'covers')
@@ -106,6 +106,11 @@ def save_cover(key, url):
         bg.paste(img, mask=img.split()[3])
         img = bg
     img = img.convert('RGB')
+    # 판매처 사진의 넓은 흰 여백을 잘라 상자가 크게 보이게 한다.
+    box = ImageChops.difference(img, Image.new('RGB', img.size, (255, 255, 255))).convert('L').point(lambda v: 255 if v > 18 else 0).getbbox()
+    if box and (box[2] - box[0]) * (box[3] - box[1]) < img.width * img.height * 0.8:
+        pad = int(max(img.size) * 0.02)
+        img = img.crop((max(0, box[0] - pad), max(0, box[1] - pad), min(img.width, box[2] + pad), min(img.height, box[3] + pad)))
     img.thumbnail((480, 480), Image.LANCZOS)
     name = hashlib.sha1(key.encode()).hexdigest()[:12] + '.webp'
     img.save(os.path.join(COVERS, name), 'WEBP', quality=80, method=6)
