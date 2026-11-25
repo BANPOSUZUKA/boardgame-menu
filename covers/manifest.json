@@ -34,9 +34,14 @@
  },
  "기린기린": {
   "name": "기린기린",
-  "status": "실패",
-  "reason": "sheet: HTTP Error 403: Forbidden",
-  "checked": "2026-11-25 17:13"
+  "file": "e1cc7c2b90ba.webp",
+  "source": "https://ecimg.cafe24img.com/pg426b93222053021/boardm/web/product/big/20260310/c9fe92528e2659eb3d2765ee4b40d65f.jpg",
+  "origin": "sheet",
+  "size": [
+   327,
+   428
+  ],
+  "saved": "2026-11-25 17:30"
  },
  "뉴클리엄(확.포)": {
   "name": "뉴클리엄 (확.포)",
@@ -52,13 +57,13 @@
  "다이노가든": {
   "name": "다이노 가든",
   "file": "53d60e9f1110.webp",
-  "source": "https://assets.st-note.com/img/1749097644-xdhKNgZVjBzlemS67pc25uyI.jpg?width=1200",
+  "source": "https://img.boardlife.co.kr/data/photo/2026/07/27/1785130984-19493.jpg",
   "origin": "sheet",
   "size": [
    480,
-   320
+   480
   ],
-  "saved": "2026-11-25 17:13"
+  "saved": "2026-11-25 17:30"
  },
  "다크호스10주년": {
   "name": "다크호스 10주년",
@@ -84,9 +89,14 @@
  },
  "듄:임페리움봉기-혈통(확.포)": {
   "name": "듄: 임페리움 봉기 - 혈통 (확.포)",
-  "status": "실패",
-  "reason": "sheet: HTTP Error 503: Service Temporarily Unavailable",
-  "checked": "2026-11-25 17:13"
+  "file": "3e6544b37ed9.webp",
+  "source": "https://img.boardlife.co.kr/wys2/swf_upload/2024/01/09/1704730501161564_lg.png",
+  "origin": "sheet",
+  "size": [
+   480,
+   480
+  ],
+  "saved": "2026-11-25 17:30"
  },
  "듄:정복과외교": {
   "name": "듄: 정복과 외교",
@@ -112,9 +122,14 @@
  },
  "라롸이트": {
   "name": "라 롸이트",
-  "status": "실패",
-  "reason": "sheet: HTTP Error 404: Not Found",
-  "checked": "2026-11-25 17:16"
+  "file": "5439693f1098.webp",
+  "source": "https://cdn1.philibertnet.com/799878-thickbox_default/ra-write-850037822232.jpg",
+  "origin": "sheet",
+  "size": [
+   397,
+   480
+  ],
+  "saved": "2026-11-25 17:30"
  },
  "라아크릴(확.포)": {
   "name": "라 아크릴 (확.포)",
@@ -195,20 +210,25 @@
  },
  "롱샷:다이스게임(확.포)": {
   "name": "롱 샷: 다이스 게임 (확.포)",
-  "status": "실패",
-  "reason": "sheet: HTTP Error 404: Not Found",
-  "checked": "2026-11-25 17:13"
+  "file": "770efda617d9.webp",
+  "source": "https://ecimg.cafe24img.com/pg426b93222053021/boardm/web/product/big/20261112/3d007fbb5641700b54ccd73bf2e77054.jpg",
+  "origin": "sheet",
+  "size": [
+   272,
+   480
+  ],
+  "saved": "2026-11-25 17:30"
  },
  "리머꼬리": {
   "name": "리머 꼬리",
   "file": "7571861955df.webp",
-  "source": "https://static.wixstatic.com/media/8a2046_6507aafd5d044456aa694513ac28c5d1~mv2.jpg/v1/fill/w_768%2Ch_631%2Cal_c%2Clg_1%2Cq_85/8a2046_6507aafd5d044456aa694513ac28c5d1~mv2.jpg",
+  "source": "https://www.lotana.be/media/seo/19/product/600x600/l/e/lemur-tails.jpg",
   "origin": "sheet",
   "size": [
-   480,
-   394
+   367,
+   480
   ],
-  "saved": "2026-11-25 17:13"
+  "saved": "2026-11-25 17:30"
  },
  "멘네페르": {
   "name": "멘네페르",
@@ -223,15 +243,25 @@
  },
  "멸종에서살아남기:브라키오": {
   "name": "멸종에서 살아남기: 브라키오",
-  "status": "실패",
-  "reason": "sheet: HTTP Error 404: Not Found",
-  "checked": "2026-11-25 17:16"
+  "file": "20b2da8cf730.webp",
+  "source": "https://ecimg.cafe24img.com/pg426b93222053021/boardm/web/product/extra/big/20260312/be5a334a54108ba1f43034a4baf5502c.jpg",
+  "origin": "sheet",
+  "size": [
+   366,
+   480
+  ],
+  "saved": "2026-11-25 17:30"
  },
  "멸종에서살아남기:티라노": {
   "name": "멸종에서 살아남기: 티라노",
-  "status": "실패",
-  "reason": "sheet: HTTP Error 404: Not Found",
-  "checked": "2026-11-25 17:16"
+  "file": "14d1c347cd79.webp",
+  "source": "https://ecimg.cafe24img.com/pg426b93222053021/boardm/web/product/extra/big/20260312/1ef799d08d32521af5d48c3f558e3ec6.jpg",
+  "origin": "sheet",
+  "size": [
+   366,
+   480
+  ],
+  "saved": "2026-11-25 17:30"
  },
  "반지의제왕:가운데땅에서의대결": {
   "name": "반지의 제왕: 가운데땅에서의 대결",
@@ -268,9 +298,14 @@
  },
  "배드컴퍼니": {
   "name": "배드 컴퍼니",
-  "status": "실패",
-  "reason": "sheet: The read operation timed out",
-  "checked": "2026-11-25 17:13"
+  "file": "9e036a07c532.webp",
+  "source": "https://ecimg.cafe24img.com/pg426b93222053021/boardm/web/product/big/20261112/38bfe77cfbc677c256d06610f7a9cd61.jpg",
+  "origin": "sheet",
+  "size": [
+   480,
+   480
+  ],
+  "saved": "2026-11-25 17:30"
  },
  "백로성(확.포)": {
   "name": "백로성 (확.포)",
@@ -307,15 +342,25 @@
  },
  "부메랑:호주": {
   "name": "부메랑: 호주",
-  "status": "실패",
-  "reason": "sheet: HTTP Error 403: Forbidden",
-  "checked": "2026-11-25 17:13"
+  "file": "d51979e875db.webp",
+  "source": "https://ecimg.cafe24img.com/pg426b93222053021/boardm/web/product/big/20261112/6dda882522af1ec951063f349f788bfe.jpg",
+  "origin": "sheet",
+  "size": [
+   360,
+   480
+  ],
+  "saved": "2026-11-25 17:30"
  },
  "빌리언즈": {
   "name": "빌리언즈",
-  "status": "실패",
-  "reason": "sheet: HTTP Error 404: Not Found",
-  "checked": "2026-11-25 17:13"
+  "file": "61bee9cc24d0.webp",
+  "source": "https://img.boardlife.co.kr/data/photo/2025/05/14/1747212890-418749.png",
+  "origin": "sheet",
+  "size": [
+   480,
+   480
+  ],
+  "saved": "2026-11-25 17:30"
  },
  "서퍼사우루스맥스": {
   "name": "서퍼사우루스 맥스",
@@ -374,9 +419,14 @@
  },
  "스타워즈:리벨리온(확.포)": {
   "name": "스타워즈: 리벨리온 (확.포)",
-  "status": "실패",
-  "reason": "sheet: HTTP Error 404: Not Found",
-  "checked": "2026-11-25 17:13"
+  "file": "58559e94724b.webp",
+  "source": "https://cdnfile.koreaboardgames.com/upload/thumb_20240421/%EC%8A%A4%ED%83%80%EC%9B%8C%EC%A6%88_%EB%A6%AC%EB%B2%A8%EB%A6%AC%EC%98%A8.jpg",
+  "origin": "sheet",
+  "size": [
+   360,
+   480
+  ],
+  "saved": "2026-11-25 17:30"
  },
  "스타워즈:클론전쟁팬데믹": {
   "name": "스타워즈: 클론전쟁 팬데믹",
@@ -424,9 +474,14 @@
  },
  "암바르": {
   "name": "암바르",
-  "status": "실패",
-  "reason": "표지 원본 URL 없음 · BGG 토큰 없음",
-  "checked": "2026-11-25 17:13"
+  "file": "161881a1b516.webp",
+  "source": "https://ecimg.cafe24img.com/pg426b93222053021/boardm/web/product/big/20261028/cc6e4794655b4b6814acbccef9195e5d.jpg",
+  "origin": "sheet",
+  "size": [
+   392,
+   464
+  ],
+  "saved": "2026-11-25 17:30"
  },
  "애비뉴": {
   "name": "애비뉴",
@@ -441,15 +496,25 @@
  },
  "어스(확.포)": {
   "name": "어스 (확.포)",
-  "status": "실패",
-  "reason": "sheet: The read operation timed out",
-  "checked": "2026-11-25 17:13"
+  "file": "67da402a253a.webp",
+  "source": "https://img.boardlife.co.kr/wys2/swf_upload/2022/02/17/164507722591388_lg.jpg",
+  "origin": "sheet",
+  "size": [
+   480,
+   480
+  ],
+  "saved": "2026-11-25 17:30"
  },
  "엔데버대항해시대": {
   "name": "엔데버 대항해시대",
-  "status": "실패",
-  "reason": "sheet: HTTP Error 403: Forbidden",
-  "checked": "2026-11-25 17:13"
+  "file": "7089669540dc.webp",
+  "source": "https://img.boardlife.co.kr/wys2/swf_upload/2023/05/07/1683391913357822_lg.jpg",
+  "origin": "sheet",
+  "size": [
+   480,
+   351
+  ],
+  "saved": "2026-11-25 17:30"
  },
  "엔데버딥씨": {
   "name": "엔데버 딥씨",
@@ -498,24 +563,24 @@
  "오픈": {
   "name": "오픈",
   "file": "5693bce954f3.webp",
-  "source": "https://shop.jellyjellycafe.com/html/upload/save_image/0111185026_659fb9e299f25.jpg",
+  "source": "https://img.boardlife.co.kr/data/photo/2024/08/23/1724347354-389223.png",
   "origin": "sheet",
   "size": [
-   480,
-   360
+   337,
+   480
   ],
-  "saved": "2026-11-25 17:13"
+  "saved": "2026-11-25 17:30"
  },
  "온마스(확.포)": {
   "name": "온마스 (확.포)",
   "file": "a57bcaadf816.webp",
-  "source": "https://assets.kogan.com/images/mightyape/MPE-33505429/1-211bb0114a-233489881.png?auto=webp&bg-color=fff&canvas=1200%2C800&dpr=1&enable=upscale&fit=bounds&height=800&quality=90&width=1200",
+  "source": "https://img.boardlife.co.kr/wys2/swf_upload/2022/05/05/1651749259156740_lg.jpg",
   "origin": "sheet",
   "size": [
-   480,
-   320
+   387,
+   480
   ],
-  "saved": "2026-11-25 17:13"
+  "saved": "2026-11-25 17:30"
  },
  "왕좌의게임핸드오브더킹": {
   "name": "왕좌의게임 핸드 오브 더 킹",
@@ -585,9 +650,14 @@
  },
  "이니스빅박스": {
   "name": "이니스 빅박스",
-  "status": "실패",
-  "reason": "sheet: HTTP Error 404: Not Found",
-  "checked": "2026-11-25 17:16"
+  "file": "8bc0aabd184a.webp",
+  "source": "https://cdnfile.koreaboardgames.com/upload/2024-07-22/42909195408252599_532766310.png",
+  "origin": "sheet",
+  "size": [
+   360,
+   480
+  ],
+  "saved": "2026-11-25 17:30"
  },
  "이리하여나는독재자가되었다": {
   "name": "이리하여 나는 독재자가 되었다",
@@ -636,13 +706,13 @@
  "지소기": {
   "name": "지소기",
   "file": "7029854ba25a.webp",
-  "source": "https://www.boardgamesindia.com/image/cache/wp/gj/product/kickstarter/jisogi-anime-studio-tycoon-3000x3000.webp",
+  "source": "https://img.boardlife.co.kr/data/photo/2026/10/27/1793083871-cover21378-77181.jpg",
   "origin": "sheet",
   "size": [
    480,
    480
   ],
-  "saved": "2026-11-25 17:23"
+  "saved": "2026-11-25 17:30"
  },
  "카르디아": {
   "name": "카르디아",
@@ -712,9 +782,14 @@
  },
  "파우스트대메피스토": {
   "name": "파우스트 대 메피스토",
-  "status": "실패",
-  "reason": "sheet: HTTP Error 410: Gone",
-  "checked": "2026-11-25 17:13"
+  "file": "c14833de63c3.webp",
+  "source": "https://ecimg.cafe24img.com/pg426b93222053021/boardm/web/product/big/20260310/724877975a92abff562a98d402185bc0.png",
+  "origin": "sheet",
+  "size": [
+   326,
+   428
+  ],
+  "saved": "2026-11-25 17:30"
  },
  "파이윰": {
   "name": "파이윰",
@@ -773,9 +848,14 @@
  },
  "포레스트셔플(확.포)": {
   "name": "포레스트 셔플 (확.포)",
-  "status": "실패",
-  "reason": "sheet: cannot identify image file <_io.BytesIO object at 0x7bd3ea9cdd50>",
-  "checked": "2026-11-25 17:25"
+  "file": "1072e3ace97c.webp",
+  "source": "https://img.boardlife.co.kr/data/photo/2024/03/12/1710181018-705469.png",
+  "origin": "sheet",
+  "size": [
+   335,
+   480
+  ],
+  "saved": "2026-11-25 17:30"
  },
  "포레스트셔플다트무어": {
   "name": "포레스트 셔플 다트무어",
