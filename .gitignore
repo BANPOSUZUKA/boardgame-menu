@@ -1,0 +1,6 @@
+apps-script/Secret.js
+.secret
+node_modules/
+__pycache__/
+apps-script-backup/
+apps-script/.clasp.json

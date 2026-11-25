@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>메뉴판 관리 현황</title>
+<style>
+:root{--ink:#24352d;--muted:#5f6d63;--line:#d9ded3;--bad:#b4483a}
+body{margin:0;background:#f4f3ed;color:var(--ink);font:14px/1.5 "Noto Sans KR","Malgun Gothic",system-ui,sans-serif}
+main{max-width:1100px;margin:auto;padding:24px 16px}h1{font-size:22px;margin:0 0 4px}p{color:var(--muted);margin:0 0 16px}
+.sum{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}.sum div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 14px}.sum b{font-size:20px;display:block}
+table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+th,td{padding:8px 10px;border-bottom:1px solid #eceee8;text-align:left;vertical-align:middle;font-size:13px}th{background:#eef1ea;font-size:12px}
+img{width:48px;height:48px;object-fit:contain;background:#f3f4ef;border-radius:6px;display:block}
+.bad{color:var(--bad);font-weight:700}.miss{color:var(--muted);font-size:12px}
+</style>
+</head>
+<body><main>
+<h1>메뉴판 관리 현황</h1>
+<p>표지 수집 상태와 비어 있는 정보를 보여 줘요. 방문객 화면에는 나오지 않아요. 표지를 바꾸려면 시트 '표지 관리'의 표지 원본 URL을 고치면 30분 안에 다시 받아요.</p>
+<div class="sum" id="sum"></div>
+<table><thead><tr><th>표지</th><th>게임</th><th>표지 상태</th><th>비어 있는 정보</th></tr></thead><tbody id="rows"><tr><td colspan="4">불러오는 중…</td></tr></tbody></table>
+</main>
+<script>
+const API='https://script.google.com/macros/s/AKfycbzgjfbQGRrwI9lLVhgDxM8bgfXbm4YePkPsE0A2JoMU3E9dbE2-tCOUIMs6zPQgxS9P/exec?format=json';
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+(async()=>{
+ const [data,covers]=await Promise.all([fetch(API,{cache:'no-store'}).then(r=>r.json()),fetch('covers/manifest.json',{cache:'no-store'}).then(r=>r.ok?r.json():{})]);
+ const fields=[['level','난이도'],['players','인원'],['time','시간'],['weight','BGG 웨이트'],['recPlayers','BGG 추천'],['bestPlayers','BGG 최적'],['bggId','BGG ID']];
+ let ok=0,bad=0,full=0;
+ const rows=data.games.sort((a,b)=>a.name.localeCompare(b.name,'ko')).map(g=>{
+  const c=covers[g.key]||{};const has=!!c.file;has?ok++:bad++;
+  const miss=fields.filter(([k])=>!g[k]||/미확인/.test(g[k])).map(([,l])=>l);if(!miss.length)full++;
+  return `<tr><td>${has?`<img src="covers/${c.file}" alt="">`:''}</td><td>${esc(g.name)}${g.inMenu?'':' <span class="bad">(시트 정보 없음)</span>'}</td><td>${has?`저장 완료 · <a href="${esc(c.source)}" target="_blank" rel="noopener">출처</a>`:`<span class="bad">${esc(c.reason||'아직 수집 전')}</span>`}</td><td class="miss">${miss.join(', ')||'—'}</td></tr>`});
+ document.getElementById('rows').innerHTML=rows.join('');
+ document.getElementById('sum').innerHTML=`<div><b>${data.games.length}</b>보유 게임</div><div><b>${ok}</b>표지 저장</div><div><b>${bad}</b>표지 없음</div><div><b>${full}</b>정보 모두 있음</div>`;
+})().catch(e=>{document.getElementById('rows').innerHTML=`<tr><td colspan="4" class="bad">불러오기 실패: ${esc(e.message)}</td></tr>`});
+</script>
+</body></html>
