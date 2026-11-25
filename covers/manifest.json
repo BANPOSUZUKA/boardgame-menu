@@ -774,8 +774,8 @@
  "포레스트셔플(확.포)": {
   "name": "포레스트 셔플 (확.포)",
   "status": "실패",
-  "reason": "sheet: cannot identify image file <_io.BytesIO object at 0x79ed4a679f30>",
-  "checked": "2026-11-25 17:23"
+  "reason": "sheet: cannot identify image file <_io.BytesIO object at 0x7bd3ea9cdd50>",
+  "checked": "2026-11-25 17:25"
  },
  "포레스트셔플다트무어": {
   "name": "포레스트 셔플 다트무어",
