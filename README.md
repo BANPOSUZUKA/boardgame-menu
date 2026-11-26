@@ -22,7 +22,7 @@
 6. BGG에 없는 국내 게임은 국내 판매·출판사 페이지로 표지·인원·시간·유형을 직접 채워요.
 7. 웹 어디에도 없을 때만 검색한 내용을 적어 보고해요.
 
-표지는 한국판을 먼저 찾아요(제작사 → 국내 유통사·판매처 → 해외 판매처). 매주 금요일 17시 예약 작업(boardgame-menu-weekly, Sonnet 5.5)이 이 순서대로 남은 게임을 정리해요.
+보유 게임은 대부분 **신판**(최신판·기념판)이에요. 표지와 BGG ID는 최신판 기준으로 고르고, 구판 일러스트는 쓰지 않아요(예: 버건디의 성 = 20주년판, 젝스님트 = 30주년판). 표지는 한국판을 먼저 찾아요(제작사 → 국내 유통사·판매처 → 해외 판매처). 매주 금요일 17시 예약 작업(boardgame-menu-weekly, Sonnet 5.5)이 이 순서대로 남은 게임을 정리해요.
 
 ## 고친 뒤 올리기
 - 데이터 창구: `cd apps-script; clasp push -f; clasp update-deployment AKfycbzgjfbQGRrwI9lLVhgDxM8bgfXbm4YePkPsE0A2JoMU3E9dbE2-tCOUIMs6zPQgxS9P`
