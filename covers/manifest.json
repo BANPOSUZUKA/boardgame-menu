@@ -36,11 +36,16 @@
   "bgg": "2026-11-25 브라우저로 조회"
  },
  "굿드림": {
-  "name": "굿드림",
   "bgg": "2026-11-26 10:32 BGG에서 못 찾음",
-  "status": "실패",
-  "reason": "표지 원본 URL 없음",
-  "checked": "2026-11-26 10:32"
+  "name": "굿드림",
+  "file": "ab55ba674401.webp",
+  "source": "https://img.boardlife.co.kr/data/photo/2025/02/19/1739927141-46155.png",
+  "origin": "sheet",
+  "size": [
+   300,
+   440
+  ],
+  "saved": "2026-11-26 10:56"
  },
  "궁신": {
   "bgg": "2026-11-26 10:32",
@@ -175,8 +180,16 @@
   "saved": "2026-11-26 10:42"
  },
  "덤블속": {
+  "bgg": "2026-11-26 10:56",
   "name": "덤블속",
-  "bgg": ""
+  "file": "c8202b056973.webp",
+  "source": "https://cf.geekdo-images.com/vYLjqPslPNfM5QJ5NZCsvg__original/img/0aiAENJiZxo1zrDoWnb_GV0UMJU=/0x0/filters:format(png)/pic6003567.png",
+  "origin": "bgg",
+  "size": [
+   274,
+   480
+  ],
+  "saved": "2026-11-26 10:56"
  },
  "데인저데인저": {
   "bgg": "2026-11-26 10:32",
@@ -726,11 +739,16 @@
   "bgg": "2026-11-25 브라우저로 조회"
  },
  "셀라루스": {
-  "name": "셀라루스",
   "bgg": "2026-11-26 10:32 BGG에서 못 찾음",
-  "status": "실패",
-  "reason": "표지 원본 URL 없음",
-  "checked": "2026-11-26 10:32"
+  "name": "셀라루스",
+  "file": "e3038c2a6e9f.webp",
+  "source": "https://img.boardlife.co.kr/data/photo/2025/09/01/1756729364-328273.png",
+  "origin": "sheet",
+  "size": [
+   480,
+   472
+  ],
+  "saved": "2026-11-26 10:56"
  },
  "셋트": {
   "bgg": "2026-11-26 10:42",
