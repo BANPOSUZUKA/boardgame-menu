@@ -40,7 +40,7 @@ button,input,select{font:inherit;color:inherit}button,select{cursor:pointer}butt
 .chips{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
 .chip{background:#f7f8f4;border:1px solid var(--line);border-radius:9px;min-height:38px;padding:6px 2px;font-size:12px;font-weight:650}
 .chip.active{background:var(--green);color:#fff;border-color:var(--green)}
-.pstep{display:flex;gap:6px;align-items:stretch}.pstep .chip{padding:6px 14px}.step{width:44px;min-height:42px;border:1px solid var(--line);background:#fff;border-radius:9px;font-size:20px;font-weight:700;color:var(--green);line-height:1}.step:disabled{opacity:.35}.pnum{flex:1;display:flex;align-items:center;justify-content:center;gap:2px;border:1px solid var(--line);border-radius:9px;background:#fff;font-weight:750}.pnum input{width:3ch;border:0;outline:0;background:none;text-align:center;font-size:18px;font-weight:800;color:var(--green);-moz-appearance:textfield;appearance:textfield}.pnum input::-webkit-outer-spin-button,.pnum input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}.pnum:focus-within{outline:3px solid #b88244;outline-offset:2px}
+.pquick{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:6px}.pstep{display:flex;gap:6px;align-items:stretch}.step{width:44px;min-height:42px;border:1px solid var(--line);background:#fff;border-radius:9px;font-size:20px;font-weight:700;color:var(--green);line-height:1}.step:disabled{opacity:.35}.pnum{flex:1;display:flex;align-items:center;justify-content:center;gap:2px;border:1px solid var(--line);border-radius:9px;background:#fff;font-weight:750}.pnum input{width:3ch;border:0;outline:0;background:none;text-align:center;font-size:18px;font-weight:800;color:var(--green);-moz-appearance:textfield;appearance:textfield}.pnum input::-webkit-outer-spin-button,.pnum input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}.pnum:focus-within{outline:3px solid #b88244;outline-offset:2px}
 .seg{display:flex;border:1px solid var(--line);border-radius:10px;padding:3px;gap:3px;margin-top:10px;background:#f7f8f4}
 .seg button{flex:1;border:0;background:none;border-radius:7px;padding:8px 2px;font-size:12px;color:var(--muted);font-weight:650}
 .seg button.active{background:#fff;color:var(--green);box-shadow:0 1px 3px #0001}
@@ -133,7 +133,7 @@ dialog::backdrop{background:#19291f85}
    <div class="filter-title"><h2>게임 찾기</h2><button id="reset" class="plain-btn">조건 초기화</button></div>
    <label class="searchbox"><span data-icon="search"></span><input id="query" type="search" placeholder="게임 이름 검색 (한글·영문)" aria-label="게임 이름 검색"></label>
    <section class="field"><div class="field-head"><strong>플레이 인원</strong><span class="field-value" id="pValue">전체</span></div>
-    <div class="pstep" id="players"><button type="button" class="chip" id="pAll">전체</button><button type="button" class="step" id="pMinus" aria-label="인원 줄이기">−</button><label class="pnum"><input id="pNum" type="number" inputmode="numeric" min="1" max="20" placeholder="–" aria-label="플레이 인원"><span>인</span></label><button type="button" class="step" id="pPlus" aria-label="인원 늘리기">+</button></div>
+    <div class="pquick"><button type="button" class="chip" id="pAll">전체</button><button type="button" class="chip pq" data-n="2">2인</button><button type="button" class="chip pq" data-n="3">3인</button><button type="button" class="chip pq" data-n="4">4인</button></div><div class="pstep" id="players"><button type="button" class="step" id="pMinus" aria-label="인원 줄이기">−</button><label class="pnum"><input id="pNum" type="number" inputmode="numeric" min="1" max="20" placeholder="–" aria-label="플레이 인원"><span>인</span></label><button type="button" class="step" id="pPlus" aria-label="인원 늘리기">+</button></div>
     <div class="seg" id="pMode" role="group" aria-label="인원 기준"><button data-mode="any" class="active">플레이 가능</button><button data-mode="rec">BGG 추천</button><button data-mode="best">BGG 최적</button></div>
     <p class="field-note" id="pModeNote">게임 규칙상 그 인원으로 할 수 있는 게임</p></section>
    <section class="field"><div class="field-head"><strong>난이도</strong><span id="dValue" class="field-value"></span></div>
@@ -218,7 +218,7 @@ function apply(clearPick=false){
  $('typeCount').textContent=typeSelected.size?`${typeSelected.size}개 선택`:'전체';
  const active=[state.players,state.dMin!==1||state.dMax!==7,state.tMin!==0||state.tMax!==300||state.strict,state.query,typeSelected.size].filter(Boolean).length;
  $('filterSummary').textContent=active?`${active}개 조건 ▾`:'전체 ▾';
- $('pAll').classList.toggle('active',!state.players);$('pAll').setAttribute('aria-pressed',!state.players);if(document.activeElement!==$('pNum'))$('pNum').value=state.players||'';$('pMinus').disabled=state.players<=1;$('pPlus').disabled=state.players>=playersMax;
+ $('pAll').classList.toggle('active',!state.players);document.querySelectorAll('.pq').forEach(q=>{const on=+q.dataset.n===state.players;q.classList.toggle('active',on);q.setAttribute('aria-pressed',on)});$('pAll').setAttribute('aria-pressed',!state.players);if(document.activeElement!==$('pNum'))$('pNum').value=state.players||'';$('pMinus').disabled=state.players<=1;$('pPlus').disabled=state.players>=playersMax;
  document.querySelectorAll('#pMode button').forEach(b=>b.classList.toggle('active',b.dataset.mode===state.pMode));
  $('games').classList.toggle('list',state.view==='list');
  $('games').replaceChildren(...filtered.map(renderGame));
@@ -242,6 +242,7 @@ function openGame(g){const meter=n=>`<div class="meter">${Array.from({length:5},
  $('detail').querySelector('.close').onclick=()=>$('detail').close();$('detail').showModal()}
 function reset(){Object.assign(state,{players:0,pMode:'any',dMin:1,dMax:7,tMin:0,tMax:300,strict:false,query:''});typeSelected.clear();$('query').value='';$('strictTime').checked=false;buildTypes();apply(true)}
 $('pAll').onclick=()=>{state.players=0;apply(true)};
+document.querySelectorAll('.pq').forEach(q=>q.onclick=()=>{state.players=+q.dataset.n;apply(true)});
 $('pMinus').onclick=()=>{if(state.players>1){state.players--;apply(true)}};
 $('pPlus').onclick=()=>{state.players=Math.min(playersMax,(state.players||0)+1);apply(true)};
 $('pNum').addEventListener('input',e=>{const n=parseInt(e.target.value,10);state.players=n>=1?Math.min(n,playersMax):0;apply(true)});
