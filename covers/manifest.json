@@ -252,11 +252,16 @@
   "bgg": "2026-11-25 브라우저로 조회"
  },
  "디그디그딥": {
-  "name": "디그디그딥",
   "bgg": "2026-11-26 10:32 BGG에서 못 찾음",
-  "status": "실패",
-  "reason": "표지 원본 URL 없음",
-  "checked": "2026-11-26 10:32"
+  "name": "디그디그딥",
+  "file": "68fd58288f1f.webp",
+  "source": "https://img.tumblbug.com/eyJidWNrZXQiOiJ0dW1ibGJ1Zy1pbWctcHJvZCIsImtleSI6ImNvdmVyLzcwMTVkOTgwLTI4NGUtNGRjMy05MzhkLTAxYjMzMDlkNjc1ZC9hNzU2ZTZhNS1iMTAyLTRhNjMtYWQ1Ni1iNWJhM2Q4YzdhYTkuanBlZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTAwMCwiaGVpZ2h0IjoxMDAwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWUsImZpdCI6bnVsbH0sInJvdW5kQ3JvcCI6ZmFsc2UsInJvdGF0ZSI6bnVsbH19",
+  "origin": "sheet",
+  "size": [
+   480,
+   446
+  ],
+  "saved": "2026-11-26 11:55"
  },
  "딕싯디즈니": {
   "bgg": "2026-11-26 10:32",
