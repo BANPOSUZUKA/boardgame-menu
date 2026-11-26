@@ -90,6 +90,7 @@ button,input,select{font:inherit;color:inherit}button,select{cursor:pointer}butt
 .games.list .ltag{display:inline-block}.ltag{display:none}
 .empty{padding:42px 16px;text-align:center;border:1px dashed #bac7b8;border-radius:var(--radius);color:var(--muted)}.empty strong{display:block;font-size:17px;color:var(--ink);margin-bottom:6px}
 .footer-note{font-size:12.5px;color:var(--muted);margin:24px 0 0}
+.bgg-credit{display:inline-block;margin-top:14px}.bgg-credit img{display:block;width:200px;height:auto}
 .mobile-filter{display:none}
 dialog{border:0;box-shadow:0 20px 80px #1e312c40;border-radius:20px;max-width:620px;width:calc(100% - 24px);padding:0;color:var(--ink);background:#fff;max-height:calc(100dvh - 24px)}
 dialog::backdrop{background:#19291f85}
@@ -153,6 +154,7 @@ dialog::backdrop{background:#19291f85}
    <div class="games" id="games"></div>
    <div class="empty" id="empty" hidden><strong id="emptyTitle">조건에 맞는 게임이 없어요.</strong><span id="emptyMessage">검색 조건을 바꿔 보세요.</span><br><button class="plain-btn" id="emptyReset">조건 초기화</button></div>
    <p class="footer-note">난이도는 BGG 웨이트에 룰 학습 부담과 전략 깊이를 더해 정한 7단계 체감 기준이에요. 인원·시간은 확장과 숙련도에 따라 달라질 수 있어요. BGG 추천·최적 인원은 BGG 이용자 투표 결과예요.</p>
+   <a class="bgg-credit" href="https://boardgamegeek.com" target="_blank" rel="noopener noreferrer"><img src="assets/powered-by-bgg.svg" alt="Powered by BoardGameGeek" width="200" height="44" loading="lazy"></a>
   </section>
  </div>
 </main>
