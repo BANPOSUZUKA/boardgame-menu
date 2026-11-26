@@ -173,7 +173,7 @@ const norm=s=>String(s??'').normalize('NFKC').toLowerCase().replace(/\s/g,'');
 // "1~4, 6 (6인 팀전)" → [1,2,3,4,6]. 괄호 안 설명은 조건 메모라 인원 계산에서 뺀다.
 function parsePlayers(str){const base=String(str??'').normalize('NFKC').split(/[(（]/)[0].replace(/인용|인|명/g,'');const out=new Set();for(const part of base.split(/[,，、/]/)){const m=part.trim().match(/^(\d+)\s*(?:[~～–—-]\s*(\d+))?\+?$/);if(!m)continue;const a=+m[1],b=m[2]?+m[2]:a;if(a<1||b<a||b>30)continue;for(let i=a;i<=b;i++)out.add(i)}return [...out]}
 function parseTime(str){const s=String(str??'').normalize('NFKC').split(/[(（]/)[0].trim();if(!s||/미확인|미정/.test(s))return null;const halves=s.split(/[~～–—-]/);const hasH=/시간/.test(s),hasM=/분/.test(s);const unit=(v,other)=>{const h=v.match(/(\d+(?:\.\d+)?)\s*시간/),m=v.match(/(\d+)\s*분/);if(h||m)return (h?+h[1]*60:0)+(m?+m[1]:0);const n=v.match(/\d+(?:\.\d+)?/);if(!n)return null;return +n[0]*((/시간/.test(other)&&!/분/.test(other))||(hasH&&!hasM)?60:1)};let lo=unit(halves[0],halves[1]||''),hi=halves.length>1?unit(halves[1],halves[0]):lo;if(lo==null||hi==null)return null;return [Math.min(lo,hi),Math.max(lo,hi)]}
-function enrich(g){return {...g,level:+g.level||0,playerSet:parsePlayers(g.players),recSet:parsePlayers(g.recPlayers),bestSet:parsePlayers(g.bestPlayers),timeRange:parseTime(g.time),tags:String(g.type||'').replace(/\s*\([^)]*\)/g,'').split(/[·,，/]/).map(s=>s.trim()).filter(Boolean)}}
+function enrich(g){return {...g,level:+g.level||0,playerSet:parsePlayers(g.players),recSet:g.recPlayers?parsePlayers(g.recPlayers):parsePlayers(g.players),bestSet:parsePlayers(g.bestPlayers),timeRange:parseTime(g.time),tags:String(g.type||'').replace(/\s*\([^)]*\)/g,'').split(/[·,，/]/).map(s=>s.trim()).filter(Boolean)}}
 document.querySelectorAll('[data-icon]').forEach(el=>el.insertAdjacentHTML('afterbegin',ICONS[el.dataset.icon]));
 for(let i=1;i<=7;i++){const el=document.createElement('span');el.style.background=`var(--lv${i})`;$('levelLegend').append(el)}
 
@@ -209,7 +209,7 @@ function apply(clearPick=false){
  $('total').textContent=hasData?games.length:'—';$('resultCount').textContent=filtered.length;
  $('resultNote').textContent=hasData?`보유 ${games.length}개 중 ${filtered.length}개`:'';
  $('pValue').textContent=state.players?`${state.players}인 · ${{any:'플레이 가능',rec:'BGG 추천',best:'BGG 최적'}[state.pMode]}`:'전체';
- $('pModeNote').textContent={any:'게임 규칙상 그 인원으로 할 수 있는 게임',rec:'BGG 이용자 투표에서 그 인원이 추천된 게임',best:'BGG 이용자 투표에서 그 인원이 최적(Best)인 게임'}[state.pMode];
+ $('pModeNote').textContent={any:'게임 규칙상 그 인원으로 할 수 있는 게임',rec:'BGG 이용자 투표에서 그 인원이 추천된 게임 (투표가 없는 게임은 플레이 가능 인원 기준)',best:'BGG 이용자 투표에서 그 인원이 최적(Best)인 게임'}[state.pMode];
  $('dValue').textContent=state.dMin===1&&state.dMax===7?'전체':state.dMin===state.dMax?`${state.dMin} ${LEVELS[state.dMin]}`:`${state.dMin} ${LEVELS[state.dMin]} ~ ${state.dMax} ${LEVELS[state.dMax]}`;
  $('tValue').textContent=state.tMin===0&&state.tMax===300?'전체':`${niceTime(state.tMin)} ~ ${niceTime(state.tMax)}`;
  $('typeCount').textContent=typeSelected.size?`${typeSelected.size}개 선택`:'전체';
@@ -232,7 +232,7 @@ function openGame(g){const meter=n=>`<div class="meter">${Array.from({length:5},
  const bggOf=u=>(u.match(/boardgamegeek\.com\/boardgame\/(\d+)/)||[])[1];const links=[];for(const u of [g.bggId?`https://boardgamegeek.com/boardgame/${g.bggId}`:'',...g.links])if(u&&!links.some(l=>l===u||(bggOf(u)&&bggOf(l)===bggOf(u))))links.push(u);
  const label=u=>/boardgamegeek/.test(u)?'BGG':/tumblbug/.test(u)?'텀블벅':'참고 자료';
  $('detail').innerHTML=`<div class="d-wrap"><div class="d-cover">${coverHtml(g,true)}</div><div><div class="d-top"><div>${tagHtml(g,'')}<h2>${esc(g.name)}</h2>${g.english?`<div class="d-en">${esc(g.english)}</div>`:''}</div><button type="button" class="close" aria-label="닫기">×</button></div>
- <div class="d-stats"><div class="d-stat"><small>플레이 인원</small>${esc(playersText(g))}</div><div class="d-stat"><small>예상 시간</small>${esc(timeText(g))}</div><div class="d-stat"><small>BGG 추천 인원</small>${esc(g.recPlayers?g.recPlayers+'인':'—')}</div><div class="d-stat"><small>BGG 최적 인원</small>${esc(g.bestPlayers?g.bestPlayers+'인':'—')}</div><div class="d-stat"><small>BGG 웨이트</small>${esc(g.weight||'—')}</div><div class="d-stat"><small>체감 난이도</small>${esc(levelLabel(g))}</div></div>
+ <div class="d-stats"><div class="d-stat"><small>플레이 인원</small>${esc(playersText(g))}</div><div class="d-stat"><small>예상 시간</small>${esc(timeText(g))}</div><div class="d-stat"><small>BGG 추천 인원</small>${esc(g.recPlayers?g.recPlayers+'인':'BGG 투표 없음')}</div><div class="d-stat"><small>BGG 최적 인원</small>${esc(g.bestPlayers?g.bestPlayers+'인':'BGG 투표 없음')}</div><div class="d-stat"><small>BGG 웨이트</small>${esc(g.weight||'—')}</div><div class="d-stat"><small>체감 난이도</small>${esc(levelLabel(g))}</div></div>
  ${g.type?`<p class="genre" style="font-size:13px">${esc(g.type)}</p>`:''}
  ${g.rules?`<div class="meter-row"><span>룰 학습 부담 ${esc(g.rules)}/5</span>${meter(g.rules)}</div>`:''}${g.strategy?`<div class="meter-row"><span>전략 깊이 ${esc(g.strategy)}/5</span>${meter(g.strategy)}</div>`:''}
  <div class="links">${links.map(u=>`<a href="${esc(u)}" target="_blank" rel="noopener noreferrer">${label(u)} ↗</a>`).join('')}</div></div></div>`;
