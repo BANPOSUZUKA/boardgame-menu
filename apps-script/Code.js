@@ -92,8 +92,10 @@ function getGames() {
   // 함께 보여 줄 다른 사람의 보유 목록(맨 앞 탭, A열 번호·B열 게임명). 공유가 끊기면 그 목록만 빠진다.
   for (const id of EXTRA_LIST_IDS) {
     try {
-      const rows = SpreadsheetApp.openById(id).getSheets()[0].getDataRange().getDisplayValues();
-      const names = rows.filter(r => /^\d+$/.test(String(r[0]).trim()) && String(r[1] || '').trim()).map(r => String(r[1]).trim());
+      const range = SpreadsheetApp.openById(id).getSheets()[0].getDataRange();
+      const rows = range.getDisplayValues(), bgs = range.getBackgrounds(), fonts = range.getFontColors();
+      // 게임명 칸의 배경이나 글씨가 빨간 계열이면 판매한 게임으로 본다.
+      const names = rows.map((r, i) => /^\d+$/.test(String(r[0]).trim()) && String(r[1] || '').trim() && !isRed_(bgs[i][1]) && !isRed_(fonts[i][1]) ? String(r[1]).trim() : '').filter(Boolean);
       const listed = new Set(names.map(key_));
       for (const name of names) {
         // 확장 줄은 본판이 목록에 있으면 뺀다(메뉴판은 확장을 따로 세지 않음). 예: '세븐원더스 듀얼: 아고라 (확장)'
@@ -150,6 +152,13 @@ function read_(ss, title) {
   const tab = ss.getSheetByName(title);
   if (!tab) throw new Error('시트를 찾을 수 없습니다: ' + title);
   return tab.getRange(1, 1, Math.max(1, tab.getLastRow()), Math.max(1, tab.getLastColumn())).getDisplayValues();
+}
+// '#ead1dc'(연한 빨강 배경)·'#ff0000'(빨간 글씨) 등: 빨강이 초록·파랑보다 뚜렷이 큰 색. 회색·하늘색은 아님.
+function isRed_(hex) {
+  const m = /^#([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i.exec(String(hex || ''));
+  if (!m) return false;
+  const [r, g, b] = [m[1], m[2], m[3]].map(h => parseInt(h, 16));
+  return r - g >= 20 && r - b >= 12;
 }
 function key_(name) { return String(name || '').normalize('NFKC').toLowerCase().replace(/\s+/g, ''); }
 function json_(obj) { return ContentService.createTextOutput(JSON.stringify(obj)).setMimeType(ContentService.MimeType.JSON); }
