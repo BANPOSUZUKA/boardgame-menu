@@ -8,7 +8,7 @@
 
 환경 변수: API_URL(필수), ADMIN_SECRET(시트 기록용), BGG_TOKEN(선택)
 """
-import hashlib, io, json, os, sys, time, urllib.parse, urllib.request
+import hashlib, io, json, os, re, sys, time, urllib.parse, urllib.request
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone, timedelta
 from PIL import Image, ImageChops
@@ -65,14 +65,28 @@ def bgg_info(bgg_id):
         if b >= r and b >= nr and b > 0:
             best.append(int(n))
     weight = item.find('statistics/ratings/averageweight')
+    poll = item.find("poll[@name='suggested_numplayers']")
+    votes = int(poll.get('totalvotes', 0)) if poll is not None else 0
     return {
         'name': next((n.get('value') for n in item.findall('name') if n.get('type') == 'primary'), ''),
         'image': (item.findtext('image') or '').strip(),
         'minp': val('minplayers'), 'maxp': val('maxplayers'),
         'mint': val('minplaytime'), 'maxt': val('maxplaytime'),
         'weight': round(float(weight.get('value')), 2) if weight is not None and float(weight.get('value') or 0) > 0 else '',
-        'rec': compact(rec), 'best': compact(best),
+        'votes': votes,
+        # 투표가 1~2명뿐이면 추천 인원으로 쓰지 않는다(시트 기존 값과 같은 기준).
+        'rec': compact(rec) if votes >= 3 else '', 'best': compact(best) if votes >= 3 else '',
     }
+
+
+def bgg_search(name):
+    """시트의 한국어 이름으로 BGG ID 찾기. BGG에는 한국어 별칭이 많이 등록돼 있다. 확실할 때만 돌려준다."""
+    q = re.sub(r'\s*\([^)]*\)\s*$', '', name).strip()  # '(확.포)' 같은 꼬리 메모 제거
+    for exact in (1, 0):
+        items = bgg('search', query=q, type='boardgame', exact=exact).findall('item')
+        if items and (exact or len(items) == 1):
+            return items[0].get('id')
+    return ''
 
 
 def compact(nums):
@@ -135,16 +149,21 @@ def main():
     ops = []
     for g in games:
         key, name, src = g['key'], g['name'], g.get('coverSrc', '').strip()
-        info = None
-        if BGG_TOKEN and g.get('bggId'):
+        entry = manifest.setdefault(key, {'name': name})
+        info, bgg_id = None, g.get('bggId', '')
+        # 게임마다 BGG에는 한 번만 묻는다(manifest의 'bgg'에 기록). 다시 묻게 하려면 그 칸을 지운다.
+        if BGG_TOKEN and not entry.get('bgg'):
             try:
-                info = bgg_info(g['bggId'])
+                bgg_id = bgg_id or bgg_search(name)
+                info = bgg_info(bgg_id) if bgg_id else None
+                entry['bgg'] = now if info else now + ' BGG에서 못 찾음'
+                time.sleep(2)  # BGG 요청 간격
             except Exception as e:
                 print(name, 'BGG 조회 실패:', e, file=sys.stderr)
         if info:
-            fields = {'BGG ID': g['bggId'], '영어 원제': info['name'], 'BGG 웨이트 (조회분)': info['weight'],
+            fields = {'BGG ID': bgg_id, '영어 원제': info['name'], 'BGG 웨이트 (조회분)': info['weight'],
                       'BGG 추천 인원': info['rec'], 'BGG 최적 인원': info['best'],
-                      'BGG 인원 투표 출처': f"https://boardgamegeek.com/boardgame/{g['bggId']}",
+                      'BGG 인원 투표 출처': f"https://boardgamegeek.com/boardgame/{bgg_id} (인원 투표 {info['votes']}명)",
                       '최소 인원': info['minp'], '최대 인원': info['maxp'], '최대 예상 시간(분)': info['maxt']}
             if not g.get('inMenu') or not g.get('players'):
                 fields['인원'] = info['minp'] if info['minp'] == info['maxp'] else f"{info['minp']}~{info['maxp']}"
@@ -157,7 +176,6 @@ def main():
         elif not g.get('inMenu'):
             ops.append({'sheet': '전체 게임', 'name': name, 'fields': {}})  # 새 게임 행만 추가
 
-        entry = manifest.get(key, {})
         if entry.get('file') and os.path.exists(os.path.join(COVERS, entry['file'])) and (not src or entry.get('source') == src):
             continue  # 이미 받은 표지는 다시 받지 않는다. 시트의 표지 URL을 바꾸면 그때만 새로 받는다.
         # 시트에 적힌 URL(사용자가 고른 판본)이 먼저, 없으면 BGG 표지. 새 게임은 시트 칸이 비어 있어 BGG가 쓰인다.
@@ -168,7 +186,7 @@ def main():
         for origin, url in candidates:
             try:
                 file, size = save_cover(key, url)
-                manifest[key] = {'name': name, 'file': file, 'source': url, 'origin': origin, 'size': list(size), 'saved': now}
+                manifest[key] = {'bgg': entry.get('bgg', ''), 'name': name, 'file': file, 'source': url, 'origin': origin, 'size': list(size), 'saved': now}
                 ops.append({'sheet': '표지 관리', 'name': name, 'overwrite': ['저장 상태', '저장 일시', '저장 이미지 파일'],
                             'fields': {'저장 상태': '저장 완료', '저장 일시': now, '저장 이미지 파일': 'covers/' + file,
                                        '표지 원본 URL': url}})
