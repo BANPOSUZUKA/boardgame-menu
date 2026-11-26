@@ -38,10 +38,14 @@ function fillBlanks_(ss, op) {
   let r = rows.findIndex((row, i) => i > 0 && key_(row[nameCol]) === key_(op.name));
   const filled = [];
   if (r < 0) {
+    // appendRow는 빈 문자열만 든 아래쪽 칸까지 '내용'으로 쳐서 500행 뒤에 붙인다. 마지막 게임 바로 아래에 쓴다.
+    let last = 0;
+    rows.forEach((row, i) => { if (key_(row[nameCol])) last = i; });
+    r = last + 1;
     const row = new Array(width).fill('');
     row[nameCol] = String(op.name).trim();
-    tab.appendRow(row);
-    r = tab.getLastRow() - 1;
+    if (r >= tab.getMaxRows()) tab.insertRowAfter(tab.getMaxRows());
+    tab.getRange(r + 1, 1, 1, width).setValues([row]);
     rows[r] = row;
     filled.push('행 추가');
   }
