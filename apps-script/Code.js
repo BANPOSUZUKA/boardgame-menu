@@ -76,6 +76,13 @@ function getGames() {
       const sale = String(row[soldCol] || '').trim();
       if ((sale === '' || sale === '-' || sale === '—') && !owned.has(key_(name))) owned.set(key_(name), name);
     }
+    // '제외게임' 칸: 본전 계산에서만 뺀 보유 게임. 위에서부터 빈 칸이 나올 때까지 읽는다(아래쪽에 합계 이름표가 있음).
+    const exCol = headers.indexOf('제외게임');
+    for (let i = 1; exCol >= 0 && i < rows.length; i++) {
+      const name = String(rows[i][exCol] || '').trim();
+      if (!name || /^(총 |본전)/.test(name)) break;
+      if (!owned.has(key_(name))) owned.set(key_(name), name);
+    }
   }
   const menuMap = table_(read_(menu, '전체 게임'));
   const coverMap = table_(read_(menu, '표지 관리'));
