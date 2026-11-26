@@ -324,11 +324,16 @@
   "bgg": "2026-11-25 브라우저로 조회"
  },
  "반지의제왕트릭테이킹시리즈": {
+  "bgg": "2026-11-26 09:58",
   "name": "반지의 제왕 트릭테이킹 시리즈",
-  "bgg": "",
-  "status": "실패",
-  "reason": "표지 원본 URL 없음",
-  "checked": "2026-11-26 09:56"
+  "file": "682de0edcdc3.webp",
+  "source": "https://cf.geekdo-images.com/uC4N_3kQdoHefNPesAHCzQ__original/img/ohKFXmrxtaOPqJyiIMaABIy-WjU=/0x0/filters:format(png)/pic8437787.png",
+  "origin": "bgg",
+  "size": [
+   228,
+   480
+  ],
+  "saved": "2026-11-26 09:58"
  },
  "반지전쟁": {
   "name": "반지 전쟁",
@@ -510,6 +515,18 @@
   "saved": "2026-11-25 17:16",
   "bgg": "2026-11-25 브라우저로 조회"
  },
+ "스타워즈덱빌딩클론전쟁(확.포)": {
+  "bgg": "2026-11-26 09:58",
+  "name": "스타워즈 덱빌딩 클론전쟁 (확.포)",
+  "file": "e4bc24c7d5a3.webp",
+  "source": "https://cf.geekdo-images.com/IUB2pVEHP164aYDqsRAJuQ__original/img/7wwt5Pht6dZSAtJK-IkgqBKZjAU=/0x0/filters:format(jpeg)/pic8273095.jpg",
+  "origin": "bgg",
+  "size": [
+   373,
+   480
+  ],
+  "saved": "2026-11-26 09:58"
+ },
  "스타워즈호스전투": {
   "name": "스타워즈 호스 전투",
   "file": "242068507974.webp",
@@ -655,11 +672,16 @@
   "bgg": "2026-11-25 브라우저로 조회"
  },
  "왕좌의게임(확.포)": {
+  "bgg": "2026-11-26 09:58",
   "name": "왕좌의 게임 (확.포)",
-  "bgg": "",
-  "status": "실패",
-  "reason": "표지 원본 URL 없음",
-  "checked": "2026-11-26 09:56"
+  "file": "35b0332659af.webp",
+  "source": "https://cf.geekdo-images.com/M_7UvwZvuxBVjxdadsa5AA__original/img/3tv6H7jX5T9rqwuI84YZKZDBGcw=/0x0/filters:format(jpeg)/pic1077906.jpg",
+  "origin": "bgg",
+  "size": [
+   480,
+   480
+  ],
+  "saved": "2026-11-26 09:58"
  },
  "왕좌의게임핸드오브더킹": {
   "name": "왕좌의게임 핸드 오브 더 킹",
@@ -734,11 +756,16 @@
   "bgg": "2026-11-25 브라우저로 조회"
  },
  "위너스서클": {
+  "bgg": "2026-11-26 09:58",
   "name": "위너스 서클",
-  "bgg": "",
-  "status": "실패",
-  "reason": "표지 원본 URL 없음",
-  "checked": "2026-11-26 09:56"
+  "file": "f81eae5e8d25.webp",
+  "source": "https://cf.geekdo-images.com/oS9H9GsVkOuS0B40bT5V8g__original/img/tKMXXehPoVnH0QGldWdtUlsoNgk=/0x0/filters:format(jpeg)/pic7745780.jpg",
+  "origin": "bgg",
+  "size": [
+   344,
+   480
+  ],
+  "saved": "2026-11-26 09:58"
  },
  "이니스빅박스": {
   "name": "이니스 빅박스",
