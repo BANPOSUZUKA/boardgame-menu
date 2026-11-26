@@ -444,16 +444,16 @@
   "bgg": "2026-11-25 브라우저로 조회"
  },
  "루미큐브신비아파트": {
-  "bgg": "",
+  "bgg": "2026-11-26 12:01",
   "name": "루미큐브 신비아파트",
   "file": "545213706741.webp",
-  "source": "https://cf.geekdo-images.com/LeaLDlTTmeN639MfuflcMw__original/img/fusGQFpm4srwqhM8CDlEDzh0NyQ=/0x0/filters:format(jpeg)/pic2286966.jpg",
-  "origin": "bgg",
+  "source": "https://cdnfile.koreaboardgames.com/upload/2024-09-11/1rAmQ6pUCQx1vTgYNIDd.jpg",
+  "origin": "sheet",
   "size": [
-   473,
+   360,
    480
   ],
-  "saved": "2026-11-26 10:42"
+  "saved": "2026-11-26 12:01"
  },
  "리머꼬리": {
   "name": "리머 꼬리",
@@ -624,8 +624,16 @@
   "bgg": "2026-11-25 브라우저로 조회"
  },
  "버건디의성": {
+  "bgg": "2026-11-26 12:01",
   "name": "버건디의 성",
-  "bgg": ""
+  "file": "53cb9f41ef04.webp",
+  "source": "https://cf.geekdo-images.com/VrNrk7XVU1hN0j1ZFhjcjw__original/img/IYxnn0KV56lDy18_0e23DSLcMso=/0x0/filters:format(jpeg)/pic4934938.jpg",
+  "origin": "bgg",
+  "size": [
+   339,
+   480
+  ],
+  "saved": "2026-11-26 12:01"
  },
  "보츠와나": {
   "bgg": "2026-11-26 10:32",
@@ -1247,13 +1255,13 @@
   "bgg": "2026-11-26 BGG에서 못 찾음 (수동 확인)",
   "name": "잠만보 다이스 게임",
   "file": "ac4be5797f2c.webp",
-  "source": "https://cf.geekdo-images.com/dp-pJkUemCjhrwi9QItrPA__original/img/eeYPdva8ti4Hi2PYxkTLRPrtfKk=/0x0/filters:format(jpeg)/pic378237.jpg",
+  "source": "https://img.boardlife.co.kr/wys2/swf_upload/2023/09/15/1694784536659347_lg.jpg",
   "origin": "sheet",
   "size": [
    480,
-   377
+   448
   ],
-  "saved": "2026-11-26 10:32"
+  "saved": "2026-11-26 12:01"
  },
  "장미전쟁": {
   "bgg": "2026-11-26 10:32",
@@ -1280,8 +1288,16 @@
   "bgg": "2026-11-25 브라우저로 조회"
  },
  "젝스님트": {
-  "bgg": "",
-  "name": "젝스님트"
+  "bgg": "2026-11-26 12:01",
+  "name": "젝스님트",
+  "file": "16b78c94cbcf.webp",
+  "source": "https://cf.geekdo-images.com/JhE93vCH0iJ4w435OSODCA__original/img/Ewp0fWA9b0cHIoP4gfoNdQaQhjw=/0x0/filters:format(png)/pic9039992.png",
+  "origin": "bgg",
+  "size": [
+   340,
+   480
+  ],
+  "saved": "2026-11-26 12:01"
  },
  "젝스님트:황소남작": {
   "name": "젝스님트: 황소 남작",
