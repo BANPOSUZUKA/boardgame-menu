@@ -40,6 +40,7 @@ button,input,select{font:inherit;color:inherit}button,select{cursor:pointer}butt
 .chips{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
 .chip{background:#f7f8f4;border:1px solid var(--line);border-radius:9px;min-height:38px;padding:6px 2px;font-size:12px;font-weight:650}
 .chip.active{background:var(--green);color:#fff;border-color:var(--green)}
+select.chip{text-align:center;text-align-last:center;-webkit-appearance:none;appearance:none;color:var(--ink)}select.chip.active{color:#fff}
 .seg{display:flex;border:1px solid var(--line);border-radius:10px;padding:3px;gap:3px;margin-top:10px;background:#f7f8f4}
 .seg button{flex:1;border:0;background:none;border-radius:7px;padding:8px 2px;font-size:12px;color:var(--muted);font-weight:650}
 .seg button.active{background:#fff;color:var(--green);box-shadow:0 1px 3px #0001}
@@ -191,7 +192,9 @@ function coverHtml(g,eager){const src=coverOf(g);return src?`<img src="${src}" a
 function setupRange(id,lowId,highId,minKey,maxKey,lo,hi,step){const wrap=$(id),low=$(lowId),high=$(highId),fill=wrap.querySelector('.range-fill');function paint(){low.value=state[minKey];high.value=state[maxKey];fill.style.left=`${(state[minKey]-lo)/(hi-lo)*100}%`;fill.style.right=`${(hi-state[maxKey])/(hi-lo)*100}%`;low.style.zIndex=state[minKey]>=hi-step?4:2;high.style.zIndex=3}function change(which,v){if(which==='low')state[minKey]=Math.min(v,state[maxKey]);else state[maxKey]=Math.max(v,state[minKey]);paint();apply(true)}low.addEventListener('input',()=>change('low',+low.value));high.addEventListener('input',()=>change('high',+high.value));wrap.querySelector('.range-track').addEventListener('pointerdown',e=>{const r=e.currentTarget.getBoundingClientRect();const v=Math.max(lo,Math.min(hi,Math.round(((e.clientX-r.left)/r.width*(hi-lo)+lo)/step)*step));change(Math.abs(v-state[minKey])<=Math.abs(v-state[maxKey])&&v<state[maxKey]?'low':'high',v)});return paint}
 const paintDiff=setupRange('diffRange','dMin','dMax','dMin','dMax',1,7,1),paintTime=setupRange('timeRange','tMin','tMax','tMin','tMax',0,300,15);
 
-function buildPlayers(){const max=Math.max(8,...games.flatMap(g=>g.playerSet));const el=$('players');el.replaceChildren();for(let n=0;n<=max;n++){const b=document.createElement('button');b.type='button';b.className='chip';b.dataset.n=n;b.textContent=n?`${n}인`:'전체';b.addEventListener('click',()=>{state.players=n;apply(true)});el.append(b)}}
+let playersMax=0;
+// 1~8인은 버튼, 9인 이상은 '9인+' 칸 하나에서 고른다(버튼이 20개씩 늘어서지 않게).
+function buildPlayers(){const max=Math.max(8,...games.flatMap(g=>g.playerSet));playersMax=max;const el=$('players');el.replaceChildren();for(let n=0;n<=8;n++){const b=document.createElement('button');b.type='button';b.className='chip';b.dataset.n=n;b.textContent=n?`${n}인`:'전체';b.addEventListener('click',()=>{state.players=n;apply(true)});el.append(b)}if(max>8){const sel=document.createElement('select');sel.className='chip more';sel.id='playersMore';sel.setAttribute('aria-label','9인 이상 인원');sel.innerHTML='<option value="">9인+</option>'+Array.from({length:max-8},(_,i)=>`<option value="${i+9}">${i+9}인</option>`).join('');sel.addEventListener('change',()=>{state.players=+sel.value||0;apply(true)});el.append(sel)}}
 function buildTypes(){const counts=new Map();for(const g of games)for(const t of new Set(g.tags))counts.set(t,(counts.get(t)||0)+1);for(const t of [...typeSelected])if(!counts.has(t))typeSelected.delete(t);$('typeList').replaceChildren(...[...counts].sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0],'ko')).map(([t,n])=>{const b=document.createElement('button');b.type='button';b.className='type-chip'+(typeSelected.has(t)?' active':'');b.textContent=`${t} ${n}`;b.setAttribute('aria-pressed',typeSelected.has(t));b.addEventListener('click',()=>{typeSelected.has(t)?typeSelected.delete(t):typeSelected.add(t);b.classList.toggle('active');b.setAttribute('aria-pressed',typeSelected.has(t));apply(true)});return b}))}
 function matches(g){
  if(state.query){const q=norm(state.query);if(!norm(g.name).includes(q)&&!norm(g.english).includes(q))return false}
@@ -215,7 +218,7 @@ function apply(clearPick=false){
  $('typeCount').textContent=typeSelected.size?`${typeSelected.size}개 선택`:'전체';
  const active=[state.players,state.dMin!==1||state.dMax!==7,state.tMin!==0||state.tMax!==300||state.strict,state.query,typeSelected.size].filter(Boolean).length;
  $('filterSummary').textContent=active?`${active}개 조건 ▾`:'전체 ▾';
- document.querySelectorAll('#players .chip').forEach(b=>{const on=+b.dataset.n===state.players;b.classList.toggle('active',on);b.setAttribute('aria-pressed',on)});
+ document.querySelectorAll('#players button.chip').forEach(b=>{const on=+b.dataset.n===state.players;b.classList.toggle('active',on);b.setAttribute('aria-pressed',on)});{const m=$('playersMore');if(m){m.value=state.players>8?String(state.players):'';m.classList.toggle('active',state.players>8)}}
  document.querySelectorAll('#pMode button').forEach(b=>b.classList.toggle('active',b.dataset.mode===state.pMode));
  $('games').classList.toggle('list',state.view==='list');
  $('games').replaceChildren(...filtered.map(renderGame));
@@ -256,7 +259,7 @@ function setData(payload){
  if(sig===lastSignature)return;
  lastSignature=sig;games=payload.games.map(enrich);
  const first=!hasData;hasData=true;
- if(first||$('players').children.length-1<Math.max(8,...games.flatMap(g=>g.playerSet)))buildPlayers();
+ if(first||playersMax!==Math.max(8,...games.flatMap(g=>g.playerSet)))buildPlayers();
  buildTypes();apply(false);
 }
 async function loadCovers(){try{const r=await fetch('covers/manifest.json',{cache:'no-cache'});if(r.ok)covers=await r.json()}catch(e){}}
