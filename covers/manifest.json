@@ -1,4 +1,16 @@
 {
+ "갬블러갬블": {
+  "bgg": "2026-11-26 10:32",
+  "name": "갬블러 갬블",
+  "file": "50575418cab4.webp",
+  "source": "https://cf.geekdo-images.com/BV4QXYEdJtDcsPbTpCL63A__original/img/ZN7IE3DzgV1uSTwAskQ9Q5FOHa8=/0x0/filters:format(jpeg)/pic3078772.jpg",
+  "origin": "sheet",
+  "size": [
+   360,
+   480
+  ],
+  "saved": "2026-11-26 10:32"
+ },
  "공룡섬(확.포)": {
   "name": "공룡섬 (확.포)",
   "file": "055f869f2893.webp",
@@ -22,6 +34,25 @@
   ],
   "saved": "2026-11-25 17:13",
   "bgg": "2026-11-25 브라우저로 조회"
+ },
+ "굿드림": {
+  "name": "굿드림",
+  "bgg": "2026-11-26 10:32 BGG에서 못 찾음",
+  "status": "실패",
+  "reason": "표지 원본 URL 없음",
+  "checked": "2026-11-26 10:32"
+ },
+ "궁신": {
+  "bgg": "2026-11-26 10:32",
+  "name": "궁신",
+  "file": "55a47e755280.webp",
+  "source": "https://cf.geekdo-images.com/JK1HbIGtiVfsIbnw3Q543w__original/img/kPNCItrb8GwoIwV9R-vjczIkJR4=/0x0/filters:format(jpeg)/pic8004908.jpg",
+  "origin": "sheet",
+  "size": [
+   255,
+   480
+  ],
+  "saved": "2026-11-26 10:32"
  },
  "그라울최후의밤(확.포)": {
   "name": "그라울최후의밤 (확.포)",
@@ -47,6 +78,18 @@
   "saved": "2026-11-25 17:30",
   "bgg": "2026-11-25 브라우저로 조회"
  },
+ "나나": {
+  "bgg": "2026-11-26 10:32",
+  "name": "나나",
+  "file": "8e3c560ec434.webp",
+  "source": "https://cf.geekdo-images.com/d9F0ZDqcN3J7J92WckyraQ__original/img/3OAIArHm3Z_j5bAJeJlU5LKQie0=/0x0/filters:format(jpeg)/pic7605785.jpg",
+  "origin": "sheet",
+  "size": [
+   480,
+   480
+  ],
+  "saved": "2026-11-26 10:32"
+ },
  "뉴클리엄(확.포)": {
   "name": "뉴클리엄 (확.포)",
   "file": "2e49aa97a42a.webp",
@@ -58,6 +101,18 @@
   ],
   "saved": "2026-11-25 17:16",
   "bgg": "2026-11-25 브라우저로 조회"
+ },
+ "다빈치코드": {
+  "bgg": "2026-11-26 10:32",
+  "name": "다빈치코드",
+  "file": "0039de741640.webp",
+  "source": "https://cf.geekdo-images.com/o7j9AgTLZu-bcGU1hRDTQA__original/img/DB2ByyzzMuuwzi2ZCJYmzqQ9BTI=/0x0/filters:format(jpeg)/pic4979576.jpg",
+  "origin": "sheet",
+  "size": [
+   478,
+   480
+  ],
+  "saved": "2026-11-26 10:32"
  },
  "다이노가든": {
   "name": "다이노 가든",
@@ -71,6 +126,18 @@
   "saved": "2026-11-25 17:30",
   "bgg": "2026-11-25 브라우저로 조회"
  },
+ "다이스다이버": {
+  "bgg": "2026-11-26 10:32",
+  "name": "다이스다이버",
+  "file": "4b925d3f8de1.webp",
+  "source": "https://cf.geekdo-images.com/51OZ4eTPAwmO3u71UzX6XA__original/img/BIk2N_S8aIlD0cY6DLM30fpdMt0=/0x0/filters:format(jpeg)/pic8801241.jpg",
+  "origin": "sheet",
+  "size": [
+   310,
+   389
+  ],
+  "saved": "2026-11-26 10:32"
+ },
  "다크호스10주년": {
   "name": "다크호스 10주년",
   "file": "a36c1feb573c.webp",
@@ -82,6 +149,61 @@
   ],
   "saved": "2026-11-25 17:13",
   "bgg": "2026-11-25 브라우저로 조회"
+ },
+ "달무티": {
+  "bgg": "2026-11-26 10:32",
+  "name": "달무티",
+  "file": "89611efee7ac.webp",
+  "source": "https://cf.geekdo-images.com/LVCXyZpkL6rPsouhWV3noA__original/img/t1NuvuH7uYwAnPYtrxRBqqQao8o=/0x0/filters:format(jpeg)/pic711236.jpg",
+  "origin": "sheet",
+  "size": [
+   362,
+   480
+  ],
+  "saved": "2026-11-26 10:32"
+ },
+ "더갱": {
+  "bgg": "2026-11-26 10:32",
+  "name": "더 갱",
+  "file": "c60547b2ece4.webp",
+  "source": "https://cf.geekdo-images.com/fXcyjUHSb9yVdZFQj2KktQ__original/img/agSEBw98x8BhpSilh7SGPYu9vbc=/0x0/filters:format(jpeg)/pic4902475.jpg",
+  "origin": "sheet",
+  "size": [
+   480,
+   286
+  ],
+  "saved": "2026-11-26 10:32"
+ },
+ "덤블속": {
+  "name": "덤블속",
+  "bgg": "2026-11-26 10:32 BGG에서 못 찾음",
+  "status": "실패",
+  "reason": "표지 원본 URL 없음",
+  "checked": "2026-11-26 10:32"
+ },
+ "데인저데인저": {
+  "bgg": "2026-11-26 10:32",
+  "name": "데인저데인저",
+  "file": "0f213e25b402.webp",
+  "source": "https://cf.geekdo-images.com/xchuaVfkgtijWoorLCHBgw__original/img/pmYlxqEMhP-xjq0jvtKyvGcf_Rg=/0x0/filters:format(png)/pic7959884.png",
+  "origin": "sheet",
+  "size": [
+   317,
+   480
+  ],
+  "saved": "2026-11-26 10:32"
+ },
+ "도그파이트": {
+  "bgg": "2026-11-26 10:32",
+  "name": "도그파이트",
+  "file": "57f71d05dbb2.webp",
+  "source": "https://cf.geekdo-images.com/1BCHiS3_3KEA8GYZFj_20Q__original/img/KctsxlrBp8LQv9T7R6wbk_2-Qd0=/0x0/filters:format(png)/pic9589281.png",
+  "origin": "sheet",
+  "size": [
+   366,
+   480
+  ],
+  "saved": "2026-11-26 10:32"
  },
  "도도스라이딩다이노스": {
   "name": "도도스 라이딩 다이노스",
@@ -119,9 +241,36 @@
   "saved": "2026-11-25 17:16",
   "bgg": "2026-11-25 브라우저로 조회"
  },
+ "디그디그딥": {
+  "name": "디그디그딥",
+  "bgg": "2026-11-26 10:32 BGG에서 못 찾음",
+  "status": "실패",
+  "reason": "표지 원본 URL 없음",
+  "checked": "2026-11-26 10:32"
+ },
+ "딕싯디즈니": {
+  "bgg": "2026-11-26 10:32",
+  "name": "딕싯 디즈니",
+  "file": "e23be64859ab.webp",
+  "source": "https://cf.geekdo-images.com/BhkW--GOy1cSYH5b7jmSag__original/img/3YLwj3pZ1EcuxNOzNs9taqAKO6c=/0x0/filters:format(png)/pic7403703.png",
+  "origin": "sheet",
+  "size": [
+   480,
+   480
+  ],
+  "saved": "2026-11-26 10:32"
+ },
  "라다이스": {
+  "bgg": "2026-11-26 10:32",
   "name": "라 다이스",
-  "bgg": ""
+  "file": "65541a38e1e8.webp",
+  "source": "https://cf.geekdo-images.com/ZGOw8TuJIL5Hz3TbTyqwww__original/img/71yt7T0zKXMU8TarPxbqmzjhqAU=/0x0/filters:format(png)/pic9261781.png",
+  "origin": "sheet",
+  "size": [
+   354,
+   480
+  ],
+  "saved": "2026-11-26 10:32"
  },
  "라롸이트": {
   "name": "라 롸이트",
@@ -134,6 +283,18 @@
   ],
   "saved": "2026-11-25 17:30",
   "bgg": "2026-11-25 브라우저로 조회"
+ },
+ "라스베가스": {
+  "bgg": "2026-11-26 10:32",
+  "name": "라스베가스",
+  "file": "e38979a41849.webp",
+  "source": "https://cf.geekdo-images.com/aQJ0HRKx2mobP0g3FCeR_Q__original/img/0lvxwLBBElto13XPMisB0ZCTSkA=/0x0/filters:format(jpeg)/pic1261796.jpg",
+  "origin": "sheet",
+  "size": [
+   335,
+   480
+  ],
+  "saved": "2026-11-26 10:32"
  },
  "라아크릴(확.포)": {
   "name": "라 아크릴 (확.포)",
@@ -183,9 +344,29 @@
   ],
   "saved": "2026-11-26 09:56"
  },
+ "럭키넘버스": {
+  "bgg": "2026-11-26 10:32",
+  "name": "럭키넘버스",
+  "file": "17268287fc4b.webp",
+  "source": "https://cf.geekdo-images.com/254SXVeOngtdjf8SBFEUNg__original/img/nMXQaLidez7ePmk3tZYz_7-f2EI=/0x0/filters:format(jpeg)/pic5646606.jpg",
+  "origin": "sheet",
+  "size": [
+   334,
+   480
+  ],
+  "saved": "2026-11-26 10:32"
+ },
  "럼블네이션": {
+  "bgg": "2026-11-26 10:32",
   "name": "럼블네이션",
-  "bgg": ""
+  "file": "e80d0dea32e3.webp",
+  "source": "https://cf.geekdo-images.com/B0V2pKNNy32oC53CC9b0NA__original/img/QOUNQ12U7Yn_4aV4aXzDgJsJchg=/0x0/filters:format(jpeg)/pic8828234.jpg",
+  "origin": "sheet",
+  "size": [
+   350,
+   480
+  ],
+  "saved": "2026-11-26 10:32"
  },
  "레벨10": {
   "name": "레벨10",
@@ -211,6 +392,18 @@
   "saved": "2026-11-25 17:16",
   "bgg": "2026-11-25 브라우저로 조회"
  },
+ "로코코": {
+  "bgg": "2026-11-26 10:32",
+  "name": "로코코",
+  "file": "f35e59c150be.webp",
+  "source": "https://cf.geekdo-images.com/1fjJb9ELv-x-3aCWV7vxIQ__original/img/qlpCqN7YAwFAL7lpN-Bs7MOjKxo=/0x0/filters:format(jpeg)/pic5132725.jpg",
+  "origin": "sheet",
+  "size": [
+   387,
+   480
+  ],
+  "saved": "2026-11-26 10:32"
+ },
  "롤링렐름": {
   "name": "롤링 렐름",
   "file": "7d6053a6dbbb.webp",
@@ -234,6 +427,13 @@
   ],
   "saved": "2026-11-25 17:30",
   "bgg": "2026-11-25 브라우저로 조회"
+ },
+ "루미큐브신비아파트": {
+  "name": "루미큐브 신비아파트",
+  "bgg": "2026-11-26 10:32 BGG에서 못 찾음",
+  "status": "실패",
+  "reason": "표지 원본 URL 없음",
+  "checked": "2026-11-26 10:32"
  },
  "리머꼬리": {
   "name": "리머 꼬리",
@@ -283,6 +483,30 @@
   "saved": "2026-11-25 17:30",
   "bgg": "2026-11-25 브라우저로 조회"
  },
+ "무스무리모여라": {
+  "bgg": "2026-11-26 10:32",
+  "name": "무스 무리 모여라",
+  "file": "d212b828b1c2.webp",
+  "source": "https://cf.geekdo-images.com/cczD48bssFw6Ph8HcMhFHg__original/img/SHyyCYyCsuqfTKpeyQ5ewoI-kRs=/0x0/filters:format(png)/pic8223321.png",
+  "origin": "sheet",
+  "size": [
+   300,
+   480
+  ],
+  "saved": "2026-11-26 10:32"
+ },
+ "미니빌2": {
+  "bgg": "2026-11-26 10:32",
+  "name": "미니빌 2",
+  "file": "24cede9458e3.webp",
+  "source": "https://cf.geekdo-images.com/NFIzv8Yr3_u7nc_PBoYntQ__original/img/8-1WWFjl_hsrWX7O9Qotc4ncWPA=/0x0/filters:format(png)/pic6221820.png",
+  "origin": "sheet",
+  "size": [
+   480,
+   480
+  ],
+  "saved": "2026-11-26 10:32"
+ },
  "반지의제왕:가운데땅에서의대결": {
   "name": "반지의 제왕: 가운데땅에서의 대결",
   "file": "f4ebea7ba4e8.webp",
@@ -330,6 +554,18 @@
   ],
   "saved": "2026-11-25 17:16",
   "bgg": "2026-11-25 브라우저로 조회"
+ },
+ "방구석보물사냥꾼": {
+  "bgg": "2026-11-26 10:32",
+  "name": "방구석 보물 사냥꾼",
+  "file": "916e50e704e0.webp",
+  "source": "https://cf.geekdo-images.com/4-kkd1xDTm5w4KoS4OZHTg__original/img/Ozrj15kMz7iHQYRSNGutY8T49qM=/0x0/filters:format(png)/pic6950941.png",
+  "origin": "sheet",
+  "size": [
+   480,
+   338
+  ],
+  "saved": "2026-11-26 10:32"
  },
  "배드컴퍼니": {
   "name": "배드 컴퍼니",
@@ -379,6 +615,18 @@
   "saved": "2026-11-25 17:16",
   "bgg": "2026-11-25 브라우저로 조회"
  },
+ "보츠와나": {
+  "bgg": "2026-11-26 10:32",
+  "name": "보츠와 나",
+  "file": "f549c452d45d.webp",
+  "source": "https://cf.geekdo-images.com/gQJDSsdGmD95yZmetiGsRg__original/img/utaTB4H_KVSB5ZY5VQHnc0ATLNw=/0x0/filters:format(png)/pic8550221.png",
+  "origin": "sheet",
+  "size": [
+   345,
+   480
+  ],
+  "saved": "2026-11-26 10:32"
+ },
  "부메랑:호주": {
   "name": "부메랑: 호주",
   "file": "d51979e875db.webp",
@@ -403,6 +651,25 @@
   "saved": "2026-11-25 17:30",
   "bgg": "2026-11-25 브라우저로 조회"
  },
+ "사그라다": {
+  "bgg": "2026-11-26 10:32",
+  "name": "사그라다",
+  "file": "da4fe35ed349.webp",
+  "source": "https://cf.geekdo-images.com/77OxPP4ckbOgK9sPg-6KDw__original/img/oh6s7_lx_jMP0zvHK7RttbhQd5I=/0x0/filters:format(png)/pic9374520.png",
+  "origin": "sheet",
+  "size": [
+   367,
+   480
+  ],
+  "saved": "2026-11-26 10:32"
+ },
+ "살곰살곰북극곰": {
+  "name": "살곰살곰 북극곰",
+  "bgg": "2026-11-26 10:32 BGG에서 못 찾음",
+  "status": "실패",
+  "reason": "표지 원본 URL 없음",
+  "checked": "2026-11-26 10:32"
+ },
  "서퍼사우루스맥스": {
   "name": "서퍼사우루스 맥스",
   "file": "c59c352beba5.webp",
@@ -415,6 +682,20 @@
   "saved": "2026-11-25 17:13",
   "bgg": "2026-11-25 브라우저로 조회"
  },
+ "선인장게임": {
+  "name": "선인장게임",
+  "bgg": "2026-11-26 10:32 BGG에서 못 찾음",
+  "status": "실패",
+  "reason": "표지 원본 URL 없음",
+  "checked": "2026-11-26 10:32"
+ },
+ "세븐원더스듀얼": {
+  "name": "세븐원더스 듀얼",
+  "bgg": "2026-11-26 10:32 BGG에서 못 찾음",
+  "status": "실패",
+  "reason": "표지 원본 URL 없음",
+  "checked": "2026-11-26 10:32"
+ },
  "세티:외계의지성체를찾아서(확.포)": {
   "name": "세티: 외계의 지성체를 찾아서 (확.포)",
   "file": "19d605fb4aaf.webp",
@@ -426,6 +707,20 @@
   ],
   "saved": "2026-11-25 17:13",
   "bgg": "2026-11-25 브라우저로 조회"
+ },
+ "셀라루스": {
+  "name": "셀라루스",
+  "bgg": "2026-11-26 10:32 BGG에서 못 찾음",
+  "status": "실패",
+  "reason": "표지 원본 URL 없음",
+  "checked": "2026-11-26 10:32"
+ },
+ "셋트": {
+  "name": "셋트",
+  "bgg": "2026-11-26 10:32 BGG에서 못 찾음",
+  "status": "실패",
+  "reason": "표지 원본 URL 없음",
+  "checked": "2026-11-26 10:32"
  },
  "스위트스파이시": {
   "name": "스위트 스파이시",
@@ -523,9 +818,79 @@
   "saved": "2026-11-25 17:16",
   "bgg": "2026-11-25 브라우저로 조회"
  },
+ "스트라이크": {
+  "bgg": "2026-11-26 10:32",
+  "name": "스트라이크",
+  "file": "4a03be0a40ea.webp",
+  "source": "https://cf.geekdo-images.com/XZWHItIhZo-UeJYGYXBMwg__original/img/BQQQnfatnRo_lHeWCK6VclUncjU=/0x0/filters:format(jpeg)/pic6667216.jpg",
+  "origin": "sheet",
+  "size": [
+   480,
+   397
+  ],
+  "saved": "2026-11-26 10:32"
+ },
+ "아미타스의건축가들": {
+  "name": "아미타스의 건축가들",
+  "bgg": "2026-11-26 10:32 BGG에서 못 찾음",
+  "status": "실패",
+  "reason": "표지 원본 URL 없음",
+  "checked": "2026-11-26 10:32"
+ },
  "아바나": {
+  "bgg": "2026-11-26 10:32",
   "name": "아바나",
-  "bgg": ""
+  "file": "ce7086ea96e3.webp",
+  "source": "https://cf.geekdo-images.com/BPwC0TioUS40h7D00FcSMg__original/img/knfuOUNqyujDkj1ptq5q4h-BRrc=/0x0/filters:format(png)/pic8265939.png",
+  "origin": "sheet",
+  "size": [
+   355,
+   480
+  ],
+  "saved": "2026-11-26 10:32"
+ },
+ "아줄미니": {
+  "bgg": "2026-11-26 10:32",
+  "name": "아줄 미니",
+  "file": "4e6d5fb7ff3c.webp",
+  "source": "https://cf.geekdo-images.com/aPSHJO0d0XOpQR5X-wJonw__original/img/AkbtYVc6xXJF3c9EUrakklcclKw=/0x0/filters:format(png)/pic6973671.png",
+  "origin": "sheet",
+  "size": [
+   480,
+   480
+  ],
+  "saved": "2026-11-26 10:32"
+ },
+ "아줄스테인드글라스": {
+  "bgg": "2026-11-26 10:32",
+  "name": "아줄 스테인드글라스",
+  "file": "1cebbcac29d8.webp",
+  "source": "https://cf.geekdo-images.com/RrYR1xB8H7D1B5GwNV8jgQ__original/img/unI8OEWp9Fdv3D_dLahPPdLG1qc=/0x0/filters:format(jpeg)/pic4212417.jpg",
+  "origin": "sheet",
+  "size": [
+   480,
+   478
+  ],
+  "saved": "2026-11-26 10:32"
+ },
+ "아크노바": {
+  "name": "아크노바",
+  "bgg": "2026-11-26 10:32 BGG에서 못 찾음",
+  "status": "실패",
+  "reason": "표지 원본 URL 없음",
+  "checked": "2026-11-26 10:32"
+ },
+ "아트소사이어티": {
+  "bgg": "2026-11-26 10:32",
+  "name": "아트소사이어티",
+  "file": "7049651c8bd3.webp",
+  "source": "https://cf.geekdo-images.com/_-kTI7KnJp7PmbZ5ISS5RQ__original/img/zi_ULxc-unXwKj4zaXYA-MN-EO8=/0x0/filters:format(png)/pic7628025.png",
+  "origin": "sheet",
+  "size": [
+   479,
+   480
+  ],
+  "saved": "2026-11-26 10:32"
  },
  "암바르": {
   "name": "암바르",
@@ -563,6 +928,18 @@
   "saved": "2026-11-25 17:30",
   "bgg": "2026-11-25 브라우저로 조회"
  },
+ "에이스오브스페이드": {
+  "bgg": "2026-11-26 10:32",
+  "name": "에이스 오브 스페이드",
+  "file": "41d1d0c3af01.webp",
+  "source": "https://cf.geekdo-images.com/m6Do-APgKAZXZvH5UaWoCQ__original/img/t3P7L-OkowaeMUbgLy5b66wkwBg=/0x0/filters:format(jpeg)/pic8773199.jpg",
+  "origin": "sheet",
+  "size": [
+   349,
+   480
+  ],
+  "saved": "2026-11-26 10:32"
+ },
  "엔데버대항해시대": {
   "name": "엔데버 대항해시대",
   "file": "7089669540dc.webp",
@@ -586,6 +963,18 @@
   ],
   "saved": "2026-11-25 17:16",
   "bgg": "2026-11-25 브라우저로 조회"
+ },
+ "오딘": {
+  "bgg": "2026-11-26 10:32",
+  "name": "오딘",
+  "file": "4e71b6bbc14c.webp",
+  "source": "https://cf.geekdo-images.com/hh5YOk9OQ3e0uJbMOfvT2g__original/img/pq_dOY_tC4Owv3RnTIlYEcsDHrs=/0x0/filters:format(jpeg)/pic7921978.jpg",
+  "origin": "sheet",
+  "size": [
+   277,
+   480
+  ],
+  "saved": "2026-11-26 10:32"
  },
  "오를레앙빅박스": {
   "name": "오를레앙 빅박스",
@@ -671,6 +1060,18 @@
   "saved": "2026-11-25 17:13",
   "bgg": "2026-11-25 브라우저로 조회"
  },
+ "용을구해줘": {
+  "bgg": "2026-11-26 10:32",
+  "name": "용을구해줘",
+  "file": "6e58a0531c15.webp",
+  "source": "https://cf.geekdo-images.com/ms-3XYqNFeVGMM2h_relcQ__original/img/_rtSHieFwdZZv1917LBY3gAk8LA=/0x0/filters:format(png)/pic5197301.png",
+  "origin": "sheet",
+  "size": [
+   479,
+   480
+  ],
+  "saved": "2026-11-26 10:32"
+ },
  "우걱우걱(확.포)": {
   "name": "우걱우걱 (확.포)",
   "file": "6eca43cccc6f.webp",
@@ -694,6 +1095,18 @@
   ],
   "saved": "2026-11-25 17:13",
   "bgg": "2026-11-25 브라우저로 조회"
+ },
+ "우리사이냥이": {
+  "bgg": "2026-11-26 10:32",
+  "name": "우리사이냥이",
+  "file": "9416656593a4.webp",
+  "source": "https://cf.geekdo-images.com/x9ReeH79kyuLLMu_weSezQ__original/img/cbHhdVrO2YqeTQ8ezLEgBq1ExjQ=/0x0/filters:format(png)/pic8746816.png",
+  "origin": "sheet",
+  "size": [
+   480,
+   477
+  ],
+  "saved": "2026-11-26 10:32"
  },
  "워터게이트": {
   "name": "워터게이트",
@@ -779,6 +1192,42 @@
   "saved": "2026-11-25 17:13",
   "bgg": "2026-11-25 브라우저로 조회"
  },
+ "임호텝": {
+  "bgg": "2026-11-26 10:32",
+  "name": "임호텝",
+  "file": "a15818ff6e23.webp",
+  "source": "https://cf.geekdo-images.com/HkAt5n4R8XM0vNozl7fftA__original/img/934t5i7J90wlw6mb6p2m_3u98i0=/0x0/filters:format(jpeg)/pic3029488.jpg",
+  "origin": "sheet",
+  "size": [
+   480,
+   480
+  ],
+  "saved": "2026-11-26 10:32"
+ },
+ "잠만보다이스게임": {
+  "bgg": "2026-11-26 10:32",
+  "name": "잠만보 다이스 게임",
+  "file": "ac4be5797f2c.webp",
+  "source": "https://cf.geekdo-images.com/dp-pJkUemCjhrwi9QItrPA__original/img/eeYPdva8ti4Hi2PYxkTLRPrtfKk=/0x0/filters:format(jpeg)/pic378237.jpg",
+  "origin": "sheet",
+  "size": [
+   480,
+   377
+  ],
+  "saved": "2026-11-26 10:32"
+ },
+ "장미전쟁": {
+  "bgg": "2026-11-26 10:32",
+  "name": "장미전쟁",
+  "file": "16fa705af5c4.webp",
+  "source": "https://cf.geekdo-images.com/vfFy_HLiBNLxptwxFDMmDg__original/img/P3_WKEg4RBXmBWIVE4pMhFD35x4=/0x0/filters:format(jpeg)/pic2855891.jpg",
+  "origin": "sheet",
+  "size": [
+   480,
+   479
+  ],
+  "saved": "2026-11-26 10:32"
+ },
  "제국의투쟁": {
   "name": "제국의투쟁",
   "file": "1ccb1ea01581.webp",
@@ -790,6 +1239,13 @@
   ],
   "saved": "2026-11-25 17:16",
   "bgg": "2026-11-25 브라우저로 조회"
+ },
+ "젝스님트": {
+  "name": "젝스님트",
+  "bgg": "2026-11-26 10:32 BGG에서 못 찾음",
+  "status": "실패",
+  "reason": "표지 원본 URL 없음",
+  "checked": "2026-11-26 10:32"
  },
  "젝스님트:황소남작": {
   "name": "젝스님트: 황소 남작",
@@ -827,6 +1283,18 @@
   "saved": "2026-11-25 17:16",
   "bgg": "2026-11-25 브라우저로 조회"
  },
+ "카르카손": {
+  "bgg": "2026-11-26 10:32",
+  "name": "카르카손",
+  "file": "ebd9abd794aa.webp",
+  "source": "https://cf.geekdo-images.com/peUgu3A20LRmAXAMyDQfpQ__original/img/bP18m_PYjyFOv1IBGgMOteQUneA=/0x0/filters:format(jpeg)/pic8621446.jpg",
+  "origin": "sheet",
+  "size": [
+   332,
+   480
+  ],
+  "saved": "2026-11-26 10:32"
+ },
  "칸반ev": {
   "name": "칸반ev",
   "file": "c12f1b9aefb3.webp",
@@ -838,6 +1306,97 @@
   ],
   "saved": "2026-11-25 17:16",
   "bgg": "2026-11-25 브라우저로 조회"
+ },
+ "커피러시": {
+  "bgg": "2026-11-26 10:32",
+  "name": "커피 러시",
+  "file": "9337a25bb51c.webp",
+  "source": "https://cf.geekdo-images.com/LdK5ItPPwIHKUITxh3vqxA__original/img/gKSzzvUhpCYH1PjIzSYo9ffxSoM=/0x0/filters:format(jpeg)/pic7275386.jpg",
+  "origin": "sheet",
+  "size": [
+   379,
+   480
+  ],
+  "saved": "2026-11-26 10:32"
+ },
+ "컵더크랩": {
+  "bgg": "2026-11-26 10:32",
+  "name": "컵더크랩",
+  "file": "b91be7de87cc.webp",
+  "source": "https://cf.geekdo-images.com/OOijayUyi0I2LEdYouwtSA__original/img/oNEWXrcjd6vHikzuywCq7TE8OFc=/0x0/filters:format(png)/pic8808467.png",
+  "origin": "sheet",
+  "size": [
+   325,
+   480
+  ],
+  "saved": "2026-11-26 10:32"
+ },
+ "코덱스": {
+  "bgg": "2026-11-26 10:32",
+  "name": "코덱스",
+  "file": "72fabb0a02c0.webp",
+  "source": "https://cf.geekdo-images.com/0I7U0tz-RgpIFWWco5FKLA__original/img/BeNJf5TlpTDS56qdhL1lpjiyMmc=/0x0/filters:format(png)/pic5612161.png",
+  "origin": "sheet",
+  "size": [
+   480,
+   471
+  ],
+  "saved": "2026-11-26 10:32"
+ },
+ "콘셉트": {
+  "bgg": "2026-11-26 10:32",
+  "name": "콘셉트",
+  "file": "5db62461857b.webp",
+  "source": "https://cf.geekdo-images.com/hHFs0_KRoW_FJ0cMIVgZcw__original/img/vbR7Wrdlq4fPcwUE1Ck9CowlJHY=/0x0/filters:format(jpeg)/pic4991925.jpg",
+  "origin": "sheet",
+  "size": [
+   472,
+   480
+  ],
+  "saved": "2026-11-26 10:32"
+ },
+ "콰이어트하우스": {
+  "name": "콰이어트 하우스",
+  "bgg": "2026-11-26 10:32 BGG에서 못 찾음",
+  "status": "실패",
+  "reason": "표지 원본 URL 없음",
+  "checked": "2026-11-26 10:32"
+ },
+ "쿵쿵쿵코끼리해적단": {
+  "bgg": "2026-11-26 10:32",
+  "name": "쿵쿵쿵 코끼리해적단",
+  "file": "6778c023530e.webp",
+  "source": "https://cf.geekdo-images.com/MPlYQ002W5sJ_5exjFzZ7w__original/img/blpUKJxyPTAkFSqzqXmb0f_Fx2w=/0x0/filters:format(jpeg)/pic6980857.jpg",
+  "origin": "sheet",
+  "size": [
+   344,
+   480
+  ],
+  "saved": "2026-11-26 10:32"
+ },
+ "타르기": {
+  "bgg": "2026-11-26 10:32",
+  "name": "타르기",
+  "file": "d0b597e49b3f.webp",
+  "source": "https://cf.geekdo-images.com/wHg4fOf48cs1kw1PDOk1tQ__original/img/St4ABQhpauYiq4Mt6-f38JtLOjM=/0x0/filters:format(jpeg)/pic3958793.jpg",
+  "origin": "sheet",
+  "size": [
+   480,
+   480
+  ],
+  "saved": "2026-11-26 10:32"
+ },
+ "타코로코": {
+  "bgg": "2026-11-26 10:32",
+  "name": "타코로코",
+  "file": "480af84ec4b1.webp",
+  "source": "https://cf.geekdo-images.com/ldoJB0nhaDSsyTJP4NR4PA__original/img/e43cpSDrHjYuJho6KRGR8hdIFEg=/0x0/filters:format(jpeg)/pic8686533.jpg",
+  "origin": "sheet",
+  "size": [
+   279,
+   480
+  ],
+  "saved": "2026-11-26 10:32"
  },
  "타코야키마스터": {
   "name": "타코야키 마스터",
@@ -863,6 +1422,13 @@
   "saved": "2026-11-25 17:13",
   "bgg": "2026-11-25 브라우저로 조회"
  },
+ "태양신라시리즈신판": {
+  "name": "태양신 라 시리즈 신판",
+  "bgg": "2026-11-26 10:32 BGG에서 못 찾음",
+  "status": "실패",
+  "reason": "표지 원본 URL 없음",
+  "checked": "2026-11-26 10:32"
+ },
  "토네이도스플래시": {
   "name": "토네이도 스플래시",
   "file": "700c564d009c.webp",
@@ -874,6 +1440,13 @@
   ],
   "saved": "2026-11-25 17:13",
   "bgg": "2026-11-25 브라우저로 조회"
+ },
+ "티가든": {
+  "name": "티가든",
+  "bgg": "2026-11-26 10:32 BGG에서 못 찾음",
+  "status": "실패",
+  "reason": "표지 원본 URL 없음",
+  "checked": "2026-11-26 10:32"
  },
  "티펜탈의선술집": {
   "name": "티펜탈의 선술집",
@@ -959,6 +1532,18 @@
   "saved": "2026-11-25 17:13",
   "bgg": "2026-11-25 브라우저로 조회"
  },
+ "패치워크": {
+  "bgg": "2026-11-26 10:32",
+  "name": "패치워크",
+  "file": "c170a14a7d96.webp",
+  "source": "https://cf.geekdo-images.com/xNSaIHCKr_cc7Q2rQSSJPQ__original/img/HJJdVosBV35kj8pQ6wmQMiJRhVA=/0x0/filters:format(jpeg)/pic9273518.jpg",
+  "origin": "sheet",
+  "size": [
+   480,
+   477
+  ],
+  "saved": "2026-11-26 10:32"
+ },
  "페야의늪": {
   "name": "페야의 늪",
   "file": "2625685653d4.webp",
@@ -970,6 +1555,18 @@
   ],
   "saved": "2026-11-25 17:16",
   "bgg": "2026-11-25 브라우저로 조회"
+ },
+ "페이퍼사파리": {
+  "bgg": "2026-11-26 10:32",
+  "name": "페이퍼 사파리",
+  "file": "d4a3b3980de0.webp",
+  "source": "https://cf.geekdo-images.com/2YmSOUDOpnVqkuUppZruRA__original/img/VwB2PHFPXJ2dJd-mPfN-FsQGKBk=/0x0/filters:format(jpeg)/pic4498044.jpg",
+  "origin": "sheet",
+  "size": [
+   284,
+   480
+  ],
+  "saved": "2026-11-26 10:32"
  },
  "포레스트셔플(확.포)": {
   "name": "포레스트 셔플 (확.포)",
@@ -1007,6 +1604,30 @@
   "saved": "2026-11-25 17:16",
   "bgg": "2026-11-25 브라우저로 조회"
  },
+ "푸들택시": {
+  "bgg": "2026-11-26 10:32",
+  "name": "푸들택시",
+  "file": "78f0cab3f31c.webp",
+  "source": "https://cf.geekdo-images.com/ijJwlKpjJhJodCZIpdCvLQ__original/img/Db_ZK0RhRrrEv1_1pS7pjZveoCg=/0x0/filters:format(jpeg)/pic8449881.jpg",
+  "origin": "sheet",
+  "size": [
+   369,
+   480
+  ],
+  "saved": "2026-11-26 10:32"
+ },
+ "프로마쥬": {
+  "bgg": "2026-11-26 10:32",
+  "name": "프로마쥬",
+  "file": "ae131aad7b46.webp",
+  "source": "https://cf.geekdo-images.com/h87Ft6qXbzwPifN7WGnx2Q__original/img/X5va643QzqHpbIJIPUGv5jp4qGs=/0x0/filters:format(jpeg)/pic7452200.jpg",
+  "origin": "sheet",
+  "size": [
+   480,
+   480
+  ],
+  "saved": "2026-11-26 10:32"
+ },
  "플레임크래프트": {
   "name": "플레임 크래프트",
   "file": "7592e807a645.webp",
@@ -1031,6 +1652,18 @@
   ],
   "saved": "2026-11-26 09:41"
  },
+ "피나콜라다이스": {
+  "bgg": "2026-11-26 10:32",
+  "name": "피나콜라 다이스",
+  "file": "8e3bb40bff29.webp",
+  "source": "https://cf.geekdo-images.com/QzRniP5vC4BD1b4Y5aswqQ__original/img/fA4CBG-GF1LLT1qlZTl-wVlIS1Y=/0x0/filters:format(png)/pic8043570.png",
+  "origin": "sheet",
+  "size": [
+   346,
+   480
+  ],
+  "saved": "2026-11-26 10:32"
+ },
  "피에스타": {
   "name": "피에스타",
   "file": "1f0af0e9edbd.webp",
@@ -1043,6 +1676,13 @@
   "saved": "2026-11-25 17:13",
   "bgg": "2026-11-25 브라우저로 조회"
  },
+ "피프티프루티": {
+  "name": "피프티 프루티",
+  "bgg": "2026-11-26 10:32 BGG에서 못 찾음",
+  "status": "실패",
+  "reason": "표지 원본 URL 없음",
+  "checked": "2026-11-26 10:32"
+ },
  "하모니즈": {
   "name": "하모니즈",
   "file": "08b15fa4bf73.webp",
@@ -1054,6 +1694,30 @@
   ],
   "saved": "2026-11-25 17:13",
   "bgg": "2026-11-25 브라우저로 조회"
+ },
+ "하베스트": {
+  "bgg": "2026-11-26 10:32",
+  "name": "하베스트",
+  "file": "95b8fffa9b92.webp",
+  "source": "https://cf.geekdo-images.com/pImGcBuPfLEov1mm-e7iMA__original/img/zcGXpAdlvLoxmONV_Xcr2CaZtH8=/0x0/filters:format(png)/pic7490756.png",
+  "origin": "sheet",
+  "size": [
+   382,
+   383
+  ],
+  "saved": "2026-11-26 10:32"
+ },
+ "할리갈리": {
+  "bgg": "2026-11-26 10:32",
+  "name": "할리갈리",
+  "file": "90f776284a8f.webp",
+  "source": "https://cf.geekdo-images.com/gm-LiZvjkluOeKqPvuUjDg__original/img/LK1FFqGshBAiepAk37cyGEm3DI0=/0x0/filters:format(jpeg)/pic8223481.jpg",
+  "origin": "sheet",
+  "size": [
+   358,
+   480
+  ],
+  "saved": "2026-11-26 10:32"
  },
  "할리우드1947": {
   "name": "할리우드 1947",
