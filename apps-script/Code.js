@@ -86,6 +86,27 @@ function getGames() {
   }
   const menuMap = table_(read_(menu, '전체 게임'));
   const coverMap = table_(read_(menu, '표지 관리'));
+  // '다른 이름' 칸(쉼표로 구분)에 적힌 표기는 같은 게임으로 묶는다. 예: 파티사우르스20s = 파티사우루스 20s
+  const alias = new Map();
+  for (const [k, m] of menuMap) for (const a of String(m['다른 이름'] || '').split(',')) if (key_(a)) alias.set(key_(a), k);
+  // 함께 보여 줄 다른 사람의 보유 목록(맨 앞 탭, A열 번호·B열 게임명). 공유가 끊기면 그 목록만 빠진다.
+  for (const id of EXTRA_LIST_IDS) {
+    try {
+      const rows = SpreadsheetApp.openById(id).getSheets()[0].getDataRange().getDisplayValues();
+      const names = rows.filter(r => /^\d+$/.test(String(r[0]).trim()) && String(r[1] || '').trim()).map(r => String(r[1]).trim());
+      const listed = new Set(names.map(key_));
+      for (const name of names) {
+        // 확장 줄은 본판이 목록에 있으면 뺀다(메뉴판은 확장을 따로 세지 않음). 예: '세븐원더스 듀얼: 아고라 (확장)'
+        const base = /\(확장\)\s*$/.test(name) ? name.replace(/\s*\(확장\)\s*$/, '').split(':')[0] : '';
+        if (base && (listed.has(key_(base)) || owned.has(key_(base)))) continue;
+        if (!owned.has(key_(name))) owned.set(key_(name), name);
+      }
+    } catch (err) { console.warn('보유 목록 읽기 실패', id, err); }
+  }
+  for (const [k, name] of [...owned]) {
+    const to = alias.get(k);
+    if (to && to !== k) { owned.delete(k); if (!owned.has(to)) owned.set(to, name); }
+  }
   const games = [];
   for (const [key, purchaseName] of owned) {
     const m = menuMap.get(key) || {};
