@@ -63,7 +63,7 @@ button,input,select{font:inherit;color:inherit}button,select{cursor:pointer}butt
 .draw-body{flex:1;min-width:0}.eyebrow{font-size:11px;letter-spacing:.16em;font-weight:850;color:var(--muted)}
 .draw-area h2{font-size:24px;line-height:1.3;margin:4px 0;overflow-wrap:anywhere}
 .draw-meta{color:var(--muted);font-size:13px;margin:0;display:flex;flex-wrap:wrap;gap:4px 10px}
-.draw-area.rolled{animation:pop .3s ease}@keyframes pop{0%{transform:scale(.985);opacity:.6}100%{transform:none;opacity:1}}
+.draw-area.rolled{animation:pop .3s ease}.draw-area.spinning .draw-btn svg{animation:spin .6s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}.draw-area.tick h2,.draw-area.tick .draw-cover img{animation:tick .14s ease-out}@keyframes tick{from{transform:translateY(-8px);opacity:.35}to{transform:none;opacity:1}}.draw-area.spinning .draw-cover{box-shadow:0 0 0 3px var(--lv5)}@keyframes pop{0%{transform:scale(.985);opacity:.6}100%{transform:none;opacity:1}}
 .results-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 14px;flex-wrap:wrap}
 .results-bar h2{font-size:18px;margin:0}.results-bar h2 span{color:var(--green);font-variant-numeric:tabular-nums}.results-bar p{margin:2px 0 0;color:var(--muted);font-size:12px}
 .tools{display:flex;gap:7px;align-items:center}
@@ -148,7 +148,7 @@ dialog::backdrop{background:#19291f85}
    <section class="field"><div class="field-head"><strong>게임 유형</strong><span id="typeCount" class="field-value">전체</span></div><div class="type-list" id="typeList"></div><p class="field-note">여러 개를 고르면 하나라도 맞는 게임을 보여 줘요.</p></section>
   </aside>
   <section>
-   <div class="panel draw-area" id="drawArea"><div class="draw-cover" id="drawCover"><span data-icon="dice"></span></div><div class="draw-body"><div class="eyebrow">TODAY'S GAME</div><h2 id="drawName">오늘의 게임을 뽑아 보세요</h2><p class="draw-meta" id="drawMeta">지금 검색 조건에 맞는 게임 중 하나를 무작위로 골라요.</p></div><button class="draw-btn" id="drawBtn"><span data-icon="dice"></span>랜덤 뽑기</button></div>
+   <div class="panel draw-area" id="drawArea"><div class="draw-cover" id="drawCover"><span data-icon="dice"></span></div><div class="draw-body"><div class="eyebrow">TODAY'S GAME</div><h2 id="drawName">오늘의 게임을 뽑아 보세요</h2><p class="draw-meta" id="drawMeta">지금 검색 조건에 맞는 게임 중 하나를 무작위로 골라요.</p></div><button class="draw-btn" id="drawBtn"><span data-icon="dice"></span><span id="drawBtnText">랜덤 뽑기</span></button></div>
    <div class="results-bar"><div><h2>게임 목록 <span id="resultCount">0</span><small>개</small></h2><p id="resultNote"></p></div>
     <div class="tools"><select id="sort" aria-label="정렬"><option value="diff">난이도 낮은 순</option><option value="diffDesc">난이도 높은 순</option><option value="short">짧은 시간 순</option><option value="long">긴 시간 순</option><option value="name">가나다 순</option></select>
      <div class="toggle" role="group" aria-label="보기 방식"><button id="gridMode" class="active" aria-label="카드 보기" title="카드 보기" data-icon="grid"></button><button id="listMode" aria-label="리스트 보기" title="리스트 보기" data-icon="list"></button></div></div></div>
@@ -208,7 +208,7 @@ function renderGame(g){const card=document.createElement('button');card.type='bu
 function apply(clearPick=false){
  const y=window.scrollY;
  filtered=games.filter(matches).sort(gameSort);
- if(clearPick||(chosen&&!filtered.some(g=>g.key===chosen.key)))resetDraw();else if(chosen){chosen=filtered.find(g=>g.key===chosen.key);renderChosen()}
+ if(clearPick||(chosen&&!filtered.some(g=>g.key===chosen.key)))resetDraw();else if(chosen&&!spinTimer){chosen=filtered.find(g=>g.key===chosen.key);renderChosen()}
  $('total').textContent=hasData?games.length:'—';$('resultCount').textContent=filtered.length;
  $('resultNote').textContent=hasData?`보유 ${games.length}개 중 ${filtered.length}개`:'';
  $('pValue').textContent=state.players?`${state.players}인 · ${{any:'플레이 가능',rec:'BGG 추천',best:'BGG 최적'}[state.pMode]}`:'전체';
@@ -223,12 +223,14 @@ function apply(clearPick=false){
  $('games').classList.toggle('list',state.view==='list');
  $('games').replaceChildren(...filtered.map(renderGame));
  $('empty').hidden=filtered.length>0||!hasData;
- $('drawBtn').disabled=!filtered.length;
+ $('drawBtn').disabled=!filtered.length||!!spinTimer;
  paintDiff();paintTime();
  window.scrollTo(0,y);
 }
-function resetDraw(){chosen=null;$('drawName').textContent='오늘의 게임을 뽑아 보세요';$('drawMeta').textContent='지금 검색 조건에 맞는 게임 중 하나를 무작위로 골라요.';$('drawCover').innerHTML=ICONS.dice}
-function draw(){if(!filtered.length)return;const pool=chosen&&filtered.length>1?filtered.filter(g=>g.key!==chosen.key):filtered;const r=new Uint32Array(1);crypto.getRandomValues(r);chosen=pool[r[0]%pool.length];renderChosen();const a=$('drawArea');a.classList.remove('rolled');void a.offsetWidth;a.classList.add('rolled');if(innerWidth<761)a.scrollIntoView({behavior:'smooth',block:'nearest'})}
+function resetDraw(){if(spinTimer){clearTimeout(spinTimer);spinTimer=null;$('drawArea').classList.remove('spinning');$('drawBtnText').textContent='랜덤 뽑기'}chosen=null;$('drawName').textContent='오늘의 게임을 뽑아 보세요';$('drawMeta').textContent='지금 검색 조건에 맞는 게임 중 하나를 무작위로 골라요.';$('drawCover').innerHTML=ICONS.dice}
+let spinTimer=null;
+// 룰렛: 결과를 먼저 정해 두고, 후보 게임을 빠르게 넘기다 점점 느려지며 그 게임에 멈춘다(약 2.5초).
+function draw(){if(!filtered.length||spinTimer)return;const pool=chosen&&filtered.length>1?filtered.filter(g=>g.key!==chosen.key):filtered;const r=new Uint32Array(1);crypto.getRandomValues(r);const target=pool[r[0]%pool.length];const a=$('drawArea');if(innerWidth<761)a.scrollIntoView({behavior:'smooth',block:'nearest'});const land=()=>{spinTimer=null;a.classList.remove('spinning');$('drawBtn').disabled=false;$('drawBtnText').textContent='랜덤 뽑기';chosen=target;renderChosen();a.classList.remove('rolled');void a.offsetWidth;a.classList.add('rolled')};if(filtered.length<2||matchMedia('(prefers-reduced-motion: reduce)').matches)return land();$('drawBtn').disabled=true;$('drawBtnText').textContent='돌리는 중…';a.classList.add('spinning');const steps=24;let k=0,shown=null;const tick=()=>{if(k>=steps)return land();let g;do{g=filtered[Math.floor(Math.random()*filtered.length)]}while(filtered.length>1&&g===shown);shown=g;$('drawName').textContent=g.name;$('drawCover').innerHTML=coverHtml(g,true);$('drawMeta').textContent='두구두구…';a.classList.remove('tick');void a.offsetWidth;a.classList.add('tick');k++;spinTimer=setTimeout(tick,40+Math.pow(k/steps,3)*360)};tick()}
 function renderChosen(){const g=chosen;$('drawName').textContent=g.name;$('drawCover').innerHTML=coverHtml(g,true);$('drawCover').onclick=()=>openGame(g);
  const parts=[levelLabel(g),playersText(g),g.recPlayers?`BGG 추천 ${g.recPlayers}인`:'',g.bestPlayers?`최적 ${g.bestPlayers}인`:'',timeText(g),g.type];$('drawMeta').innerHTML=parts.filter(Boolean).map(p=>`<span>${esc(p)}</span>`).join('')}
 function openGame(g){const meter=n=>`<div class="meter">${Array.from({length:5},(_,i)=>`<i class="${i<+n?'on':''}"></i>`).join('')}</div>`;
